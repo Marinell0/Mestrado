@@ -36,15 +36,16 @@ Como um exemplo de utilização de um LIMS em áreas laboratoriais, a disponibil
 
 % Workflows com muitas pessoas utilizando
 
-Quando existe um workflow que é utilizado por muitos usuários, muitas vezes é necessário que estes usuários troquem informações entre si \R. Com isso, devemos implementar alguma maneira de conversa entre atividades modelada em BPM para que o LIMS possa lidar com o armazenamento de tais conversas entre atividades do fluxo de trabalho.
+Quando existe um workflow que é utilizado por muitos usuários, muitas vezes é necessário que estes usuários troquem informações entre si \R. Com isso, algum tipo de implementação que disponibiliza a troca de informações entre atividades de diferentes BPMs modelados dentro de um LIMS ajuda na cooperação entre usuários de diferentes workflows.
 
 % Troca de informações entre essas pessoas
 
-Juntando o sistema de permissões utilizado no LIMS Flux \R e a reestruturação feita no software para permitir que atividades feitas na modelagem do BPM utilizado dentro do software possam conversar entre si fazem com que essa seja uma ferramenta poderosa para que múltiplos workflows de um mesmo laboratório possam se juntar, tendo comunicação entre os usuários e aumentando a integração entre as partes de uma organização.
+Utilizando o sistema de permissões utilizado no LIMS Flux \R e a reestruturação feita no software para permitir que atividades feitas na modelagem do BPM utilizado dentro do software possam conversar entre si fazem com que essa seja uma ferramenta poderosa para que múltiplos workflows de um mesmo laboratório possam se juntar, tendo comunicação entre os usuários e aumentando a integração entre as partes de uma organização.
 
 % O que a troca de informações possibilita
 
-Com isso, é possível vincular atividades de diferentes BPMs umas as outras por meio de eventos. Separadamente, os workflows não podiam comunicar entre si, enquanto que agora pode-ser fazer pesquisas de dados dentro das atividades que os usuários podem acessar, podemos ter uma visão macro de todos os workflows vinculados, além de receber notificações de atividades concluídas (Exemplo: Calibração de um equipamento) e fazer fluxos de trabalho movidos a eventos: Um cientista pede a análise de uma mostra a um técnico de laboratório, que por sua vez recebe a notificação que existe uma atividade a ser feita. Quando concluída, o cientista recebe uma notificação e uma nova atividade está disponibilizada para ser feita.
+% Movido para a seção que descreve a funcionalidade
+% É possível vincular atividades de diferentes BPMs umas as outras por meio do compartilhamento da atividade entre usuários, utilizando o sistema de permissões do LIMS para disponibilizar informações pertinentes para cada usuário. Separadamente, os workflows não podem comunicar entre si por serem modelados separadamente utilizando o BPM, mas quando esta nova ferramenta, unindo múltiplos workflows em uma mesma modelagem, podemos ter uma visão de todos os workflows vinculados, além de receber notificações de atividades concluídas (Exemplo: Calibração de um equipamento) e fazer fluxos de trabalho movidos a eventos: Um cientista pede a análise de uma mostra a um técnico de laboratório, que por sua vez recebe a notificação que existe uma atividade a ser feita. Quando concluída, o cientista recebe uma notificação e uma nova atividade está disponibilizada para ser feita.
 
 % Facilidades para usuários
 
