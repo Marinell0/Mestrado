@@ -1,0 +1,49 @@
+\subsection{Atividades profundas}
+
+% Problema em grandes workflows
+
+Grandes workflows sofrem de uma profundidade de informações que torna difícil \NO a busca e a inserção de novos dados por usuários que o utilizam. Grandes workflows também podem sofrer de múltiplas pessoas buscando e inputando dados neste mesmo workflow, dando uma difuculdade tanto para os usuários para encontrar informações quanto para os desenvolvedores do LIMS que devem encontrar soluções para disponibilização de dados aos usuários.
+
+% Porque isso é um problema
+
+Este problema resume o problema com todos os LIMS ultimamente \R: A dificuldade de encontrar informações de maneira rápida e concisa, aumentando a eficiência do trabalho dos funcionários que utilizam o software e aumentando a integração do LIMS no modelo de trabalho da organização.
+
+% Como isso se relaciona com Big Data
+
+Isso tem relação com o boom do "Big Data", a grande quantidade de informações que estão sendo coletadas nos modelos tecnológicos por smart devices, como relógios ou "smart bands" que coletam dados cardiológicos, saturação de oxigênio, exercícios feitos pelo usuário aumenta a necessidade de softwares que coletam e armazenam dados com segurança. A agregação, tratamento e disponibilização destes dados para os usuários que o utilizam é de grande importância para o desenvolvimento de soluções em aplicativos para saúde de usuários e também disponibilização de informações relacionadas com o estilo de vida das pessoas.
+
+% Como isso se relaciona com a utilização com o médico
+
+Médicos tem uma aversão na utilização e implementação de softwares no seu dia a dia por diminuir a eficiência dos trabalhos feitos por confusão na interface utilizada pelo software \R. Isso faz com que informações sejam armazenadas até em papeis em uma grande sala dentro do hospital \R. Isso também diminui a eficiência dos trabalhos mas, como este sistema já é intuitivo para o usuário, ele prefere a diminuição na velocidade para algo que funciona do que a utilização de um software que ele desconhece e que as informações são disponibilizadas de maneira confusa.
+
+Isso demonstra a necessidade de uma interface intuitiva, rápida e eficáz para os usuários chave do LIMS: O médico. Para que isso ocorra dentro de um workflow grande com atividades profundas é uma grande dificuldade, já que as informações dentro do programa devem ser todas mostradas para demonstrar um contexto (histórico hospitalar) que vai ser utilizado para completar a atividade atual, sem que isso entre na frente da utilização do software.
+
+% Como isso se relaciona com a utilização de várias áreas
+
+Igualmente, para utilização de um LIMS em áreas laboratoriais, a disponibilização de informações para os funcionários, seja cientistas, seja engenheiros, seja gerentes de projeto, devem estar disponibilizadas de maneira intuitiva em uma interface dinâmica para cada usuário, para que esta tarefa de encontrar informações e tarefas que devem ser feitas no dia seja encontrada de maneira a aumentar a eficiência e praticidade do trabalho das pessoas envolvidas.
+
+\subsection{Troca de informações}
+
+% Workflows com muitas pessoas utilizando
+
+Quando existe um workflow que é utilizado por muitos usuários, muitas vezes é necessário que estes usuários troquem informações entre si \R. Com isso, devemos implementar alguma maneira de conversa entre atividades modelada em BPM para que o LIMS possa lidar com o armazenamento de tais conversas entre atividades do fluxo de trabalho.
+
+% Troca de informações entre essas pessoas
+
+Juntando o sistema de permissões utilizado no LIMS Flux \R e a reestruturação feita no software para permitir que atividades feitas na modelagem do BPM utilizado dentro do software possam conversar entre si fazem com que essa seja uma ferramenta poderosa para que múltiplos workflows de um mesmo laboratório possam se juntar, tendo comunicação entre os usuários e aumentando a integração entre as partes de uma organização.
+
+% O que a troca de informações possibilita
+
+Com isso, é possível vincular atividades de diferentes BPMs umas as outras por meio de eventos. Separadamente, os workflows não podiam comunicar entre si, enquanto que agora pode-ser fazer pesquisas de dados dentro das atividades que os usuários podem acessar, podemos ter uma visão macro de todos os workflows vinculados, além de receber notificações de atividades concluídas (Exemplo: Calibração de um equipamento) e fazer fluxos de trabalho movidos a eventos: Um cientista pede a análise de uma mostra a um técnico de laboratório, que por sua vez recebe a notificação que existe uma atividade a ser feita. Quando concluída, o cientista recebe uma notificação e uma nova atividade está disponibilizada para ser feita.
+
+% Facilidades para usuários
+
+Uma visão macro do workflow ajuda, por exemplo, um gerente de laboratório a visualizar quais trabalhos estão sendo feitos e obter dados como quais atividades devem ser feitas com mais frequência, onde estão as ineficiências do laboratório e como melhora-las.
+
+O compartilhamento de informações entre funcionários da organização que implementa o LIMS com compartilhamento de informações entre atividades ganha maior eficiência por ter todos os dados necessários para o seu trabalho dentro da mesma interface já utilizada.
+
+Toda a organização é otimizada com a maior integração do software nos afazeres diários dos funcionários, além de ter uma maior segurança dos dados, já que ficarão armazenados com o mesmo sistema de segurança para todas as funções.
+
+% Faciliades para consumo dos dados por analise
+
+Com os dados de comunicação entre workflows todos preenchidos dentro do LIMS, isso facilita a análise do processo como um todo, que é o objetivo da implementação de um BPM em uma organização. Temos o tempo de resposta entre workflows distintos dentro da empresa, dados sobre a comunicação que poderiam ser perdido, a maior automação dos processos como envio de uma amostra diretamente para o usuário interessado ou até mesmo para a própria máquina que lê os dados e já os processa.

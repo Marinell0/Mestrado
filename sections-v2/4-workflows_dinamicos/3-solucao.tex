@@ -1,0 +1,26 @@
+\subsection{Solução}
+
+Em resposta à necessidade dos LIMS aumentarem a eficiência de obtenção de dados, foi criada uma solução de workflows dinâmicos, que mudam a forma como as informações são apresentadas e disponibilizadas ao usuário.
+Com uma interface adaptável e intuitiva, a solução permite ao usuários acessar e interagir com informações essenciais de maneira rápida e eficiente, melhorando a experiência do usuário.
+
+O usuário tem a possibilidade de escolher, dentre todas as atividades disponíveis para sua visualização, a centralização da atividade escolhida para que ela seja o ponto central do fluxo de trabalho. Com isso, o usuário pode facilmente navegar para outras áreas relevantes da interface e personalizar o fluxo de trabalho de acordo com suas necessidades específicas de forma mais rápida do que seguindo o fluxo de trabalho original.
+
+A rápida disponibilização de informações ao usuário resulta em uma série de ganhos, incluindo maior eficiência dos trabalhos feitos dentro do LIMS, já que workflows podem ser feitos com essa funcionalidade em mente, menor gasto com treinamento no uso do LIMS, já que uma interface dinâmica pode deixar a navegação mais intuitiva e aumento da produtividade do usuário com as informações disponibilizadas mais rapidamente.
+
+O usuário deve, no entanto, saber onde as informações estão contidas dentro do flux do trabalho existente para selecionar a atividade correta que contém as informações desejadas. Com isso, a interface se altera para que o fluxo de trabalho seja centralizado na atividade que o usuário deseja.
+
+As informações são disponibilizadas como se a atividade centralizada virasse a atividade inicial do workflow, como podemos ver na diferença da figura de visualização padrão do fluxo de trabalho (\ref{fig:normalInstance}) e visualização alterada (\ref{fig:changedInstance}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
+    \caption{Workflow padrão do CENTRARE, sendo sua centralização feita na atividade inicial de "Identificação do Paciente"}
+    \label{fig:normalInstance}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
+    \caption{Workflow com visualização centralizada na atividade "Cirurgia de Nariz, disponibilizando informações da atividade como "Cirurgião", "Aberto ou Fechado" e "Topo de Procedimento" \textbf{Pegar novamente a imagem com todas as informações disponíveis}}
+    \label{fig:changedInstance}
+\end{figure}

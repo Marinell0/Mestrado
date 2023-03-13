@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[portuguese]{babel}
+\usepackage{amsfonts}
+\usepackage{graphics} 
+\usepackage{epsfig} 
+\usepackage{times} 
+\usepackage{amsmath} 
+\usepackage{amssymb}  
+\usepackage{nicefrac}
+\usepackage{subfig}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{microtype}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{fontspec}
+\usepackage{fullpage}
+ 
+\setmainfont{Times New Roman}
+
+\captionsetup{singlelinecheck=false,font=small,labelsep=newline,labelfont={sf,bf}}
+\usepackage[sf,bf]{titlesec}
+\titleclass\section{top}
+\definecolor{rfopblue}{rgb}{0.4,0.5333,0.6667}
+\definecolor{oppred}{rgb}{0.6667,0.12549,0.298039}
+
+% \titleformat{\section}{\Large\bf\sf}{\textcolor{rfopblue}{\thesection}}{.5em}{\color{rfopblue}}[\color{rfopblue}\hrule\hrule\color{black}]
+% \titleformat{\subsection}{\large\sf}{\textcolor{oppred}{\thesubsection}}{.7em}{\color{oppred}}[\color{oppred}\hrule\color{black}]
+% \titleformat{\subsubsection}{\normalsize\it}{\textcolor{oppred}{\thesubsubsection}}{.7em}{\color{oppred}}[\color{black}]
+
+\newcommand{\R}{\textbf{(REFERÊNCIA)}}
+\newcommand{\NO}{\textbf{(REESCREVER)}}
+
+\begin{document}
+\begin{titlepage}
+%\fontsize{14}{12}\selectfont
+
+\vspace*{4cm}
+
+\center \textsc{\fontsize{14}{12}\selectfont \textbf{GABRIEL MARINELLO MOURA LEITE}} \\
+
+\vspace*{2cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\textsc{\fontsize{16}{12}\selectfont \textbf{
+%Alteração de BPMs para facilitar a execução de fluxos de trabalho em LIMS
+Workflows Dinâmicos na Gestão de \\ Tarefas e Responsabilidades em Sistemas Biomédicos}}\\[0.2cm] 
+% \textsc{\fontsize{14}{12}\selectfont \textbf{SUBTÍTULO DO TRABALHO}}\\[1.0cm] 
+
+\vspace*{2cm}
+
+\hspace{.3\textwidth}
+\begin{minipage}{.6\textwidth}
+\fontsize{10}{12}\selectfont Relatório apresentado ao Programa de Pós-graduação em Bioinformática, da Universidade Federal de Minas Gerais como requisito parcial para obtenção do título de Mestre em Bioinformática. \\
+\linebreak
+Orientador: Prof. Dr. Sérgio Vale Aguiar Campos \\
+\end{minipage}
+
+\vspace*{\fill}
+
+\center {\fontsize{12}{12}\selectfont Belo Horizonte, MG}
+\center {\fontsize{12}{12}\selectfont 2022}
+
+\end{titlepage}
+
+\tableofcontents
+
+% \input{sections/introducao}
+% \input{sections/metodos}
+% \input{sections/resultados}
+% \input{sections/conclusao}
+
+\input{sections-v2/1-intro/index.tex}
+\input{sections-v2/2-sistemas-biomedicos-e-lims/index.tex}
+\input{sections-v2/3-lims_workflows/index.tex}
+\input{sections-v2/4-workflows_dinamicos/index.tex}
+\input{sections-v2/5-exemplo_de_aplicacoes/index.tex}
+\input{sections-v2/6-conclusao/index.tex}
+
+\bibliographystyle{unsrt}
+% \addbibresource{bibliografia.bib}
+\bibliography{bibliografia}
+
+\nocite{*}
+
+\end{document}
+
+% Organização:
+%   Intro: falar de sistemas biomédicos; 
+%          falar de lims; 
+%          falar de bpms; 
+%          falar de lims baseados em bpms; 
+%          falar dos problemas; 
+%          falar da solução
+%  Sistemas Biomédicos e LIMS
+%         falar da importância
+%         falar de lims
+%         exemplos de sistemas - serve para motivar o trabalho
+%  LIMS baseados em workflows
+%         Flux
+%         Problemas com atividades profundas
+%  Workflows Dinâmicos
+%         Para resolver este problema propomos...
+%         Ilustrar o problema
+%         Descrever a solução
+%  Exemplos de Aplicações
+%  Conclusão
+ 
+        

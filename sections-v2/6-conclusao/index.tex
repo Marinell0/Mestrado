@@ -1,0 +1,15 @@
+\section{Conclusão}
+
+Este trabalho apresenta uma implementação de uma nova funcionalidade focada em melhorar o fluxo de trabalhos dentro de LIMS que utilizam BPM: Workflows dinâmicos. Anteriormente, o sistema utilizava um processo que alterações do BPM só poderiam ser feitas em sua construção e atualizações, sem que pudesse ser alterado o tipo de visualização quando o workflow já estivesse instalado no sistema.
+
+Com a nova funcionalidade, os fluxos de trabalho dinâmicos no sistema permitiu que os usuários criassem e personalizassem fluxos de trabalho de acordo com as necessidades específicas do projeto, o que resultou em maior eficiência e flexibilidade no gerenciamento do projeto.
+
+Foi feito com sucesso a implementação da funcionalidade no sistema LIMS Flux, que utiliza como base de montagem de workflows o Business Process Model (BPM), permitindo que administradores do Flux pudessem montar workflows já com esta funcionalidade em mente para disponibilização de informações ao usuário, e também permitindo que usuários de workflows do Flux pudessem obter informações com muito mais velocidade, aumentando a eficiência dos trabalhos realizados.
+
+Como o sistema Flux utiliza de instâncias, separações dos workflows por execução, também foi pensado na funcionalidade de compartilhamento de informações entre atividades de diferentes instâncias, ou seja, BPMs com construções diferentes podem comunicar entre si, ligando suas atividades onde necessário e, com isso, obtendo a funcionalidade de comunicação assíncrona entre usuários do sistema.
+
+Com isso, podemos unificar diferentes tipos de workflow utilizados em uma organização em um único workflow com múltiplas atividades iniciais. Assim, o workflow fica mais acessível para diferentes funcionários como gestor de laboratório, podendo ele acessar qualquer parte dos múltiplos workflows agrupados que fazem parte do laboratório e fazer a coleta e análise dos dados inputados por outros funcionários, tudo em uma mesma tela.
+
+A funcionalidade de workflows dinâmicos também funciona com o a troca de informações, transformando as atividades iniciais em folhas da árvore do fluxo de trabalho. Assim, todas as informações de todas as instâncias compartilhadas ficam disponíveis quando se é alterado a ordem das atividades, transformando o BPM em um workflow completamente diferente a depender da escolha de atividade inicial do usuário.
+
+Seguindo a utilização do Flux e a melhoria que obtivemos com workflows dinâmicos alterando a interface do usuário para que ela seja mais intuitiva e eficiente, temos que os resultados foram muito positivos e que plataformas que implementam LIMS com BPM podem se beneficiar muito com este tipo de implementação.

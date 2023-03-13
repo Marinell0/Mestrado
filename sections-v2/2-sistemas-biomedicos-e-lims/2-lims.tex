@@ -1,0 +1,76 @@
+\subsection{LIMS}
+
+% O que são (de novo)
+
+Laboratory information management system (LIMS), ou sistema laboratorial de manejamento de informação são softwares criados para gestão de dados, processos, máquinas e pessoas de forma segura e muitas vezes automatizada \cite{Stafford1998}.
+
+% Onde podem ser utilizados
+
+LIMS são utilizados principalmente na área laboratorial \R, mas podem ser utilizados em qualquer sistema que necessita de coleta de dados, automação e integração de pessoas e máquinas para obtenção de resultados consistentes e para manter a segurança de tais dados \R.
+
+Um dos exemplos deste tipo de cenário é na área de telemedicina, que, com a vinda da pandemia do SarsCov2 no fim de 2019, sofreu um amento significativo de sua utilização com mais e mais pacientes surgindo e com lockdowns acontecendo, fazendo com que pessoas ficassem em casa e não pudessem fazer visitas médicas presenciais \R.
+
+Isso também levou ao grande aumento de dados sendo guardados por sistemas e, nos sistemas antigos presentes em muitos hospitais que ainda utilizam caneta e papel em grandes salas utilizadas apenas para armazenamento de dados de pacientes \R, esta quantidade de dados não poderia ser escalonada para abranger a quantidade requerida nos tempos da pandemia.
+
+% Exemplos de utilização, tanto em áreas médicas ou laboratoriais
+
+O próprio governo brasileiro expandiu a utilização de softwares no sistema único de saúde (SUS) \R, aumentando o projeto de unificação dos dados de pacientes por todo o país para que todos fossem armazenados em um banco que todos os médicos tivessem acesso para melhoria na eficiência de processos e unificação de hospitais, o  e-SUS, com enfase na "estratégia para reestruturar as informações da Atenção Primária em nível nacional" \R.
+
+Para a área laboratorial, temos diversos exemplos de utilização para automação de processos e experimentos, além de aumento no nível de segurança de dados que é necessário para manter dados sigilosos apenas com as pessoas que podem acessá-los. \NO
+
+Os LIMS são construídos seguindo uma estrutura de fluxo de trabalhos (workflows) \R, modelando como cada trabalho funciona dentro da área que estão implementados. \NO
+
+% Quais categorias de pessoas são as melhores para utilizar o software (Manager, developer, médico, paciente...)
+
+É importante que o LIMS esteja integrado com toda a atividade de onde está sendo utilizado para que aumente a eficiência e automação das atividades dentro do ambiente implementado. Isso inclui a utilização pelos funcionários, sendo o LIMS moldado para todo tipo de funcionário na companhia.
+
+Uma das maneiras de estruturar estes fluxos de trabalho é com a utilização de Business Process Management (BPM).
+
+BPM é uma metodologia de modelar trabalhos e processos que gera atividades representando fluxos de trabalho que são necessários para chegar a um objetivo dentro de uma organização \R. Com a modelagem do BPM, chegamos a uma arquitetura de processos que pode ser dividida de maneira a aumentar a eficacia de um grupo de pessoas no trabalho modelado \R.
+
+% Utilização de BPMs no LIMS
+
+Ao utilizar o BPM com LIMS, utilizamos o BPMN, ou Business Process Management Notation, uma notação que é padronizada \R e pode ser utilizada juntamente a um LIMS para modelar os processos e já poder integrar o fluxo de trabalho diretamente ao software de coleta de dados e automatização de processos \R.
+
+% Beneficios de BPMs ( https://proceso.pro/en/blog/pros-and-cons-of-business-process-management-bpm/ )
+
+A utilização de BPMs em LIMS ajuda na produtividade dos usuários ao pelo framework já se auto documentar e automatizar partes do processo, reduz a quantidade de erros no processo por restringir as partes críticas das atividades seguindo as políticas do laboratório, sem que o usuário possa fugir das politicas da compania.
+Com isso, temos também a redução de micro manejamento dos gerentes da empresa, por ter um controle sobre os dados maior com medidas de segurança e por todos os funcionários seguirem o mesmo protocolo de preenchimento de dados e acatamento de resoluções. \R (https://proceso.pro/en/blog/pros-and-cons-of-business-process-management-bpm/)
+
+% Maleficios de BPMs ( https://proceso.pro/en/blog/pros-and-cons-of-business-process-management-bpm/ )
+
+Seguindo os princípios dos benefícios do BPM, os malefícios de sua integração seguem da falta de comunicação entre pessoas para seguir as regras da empresa, dificuldade em inovações, já que a restrição por seguir as regras da empresa pode deixar mais lento o pensamento de novos processos dentro do laboratório e, caso a implementação seja ruim, pode haver uma restrição desnecessária que desacelera o trabalho dos participantes. \R
+
+% Beneficios de LIMS ( https://genemod.net/blog/lims-the-good-the-bad-and-the-ugly )
+
+% Eficiencia, acuracia e produtividade
+
+Os benefícios da utilização de um LIMS em um ambiente laboratorial vem do aumento da eficiência dos cientistas, técnicos, gerência e comunicação externa entre laboratórios vinda da integração do software com as partes necessárias para gravação e obtenção de dados. Sendo assim, um LIMS seguro pode fornecer todos os dados em uma tela rápida para a gerência e, caso um cientista vir a utilizar do software, ter outra tela mais relevante disponibilizando apenas as informações necessárias para aquele individuo, aumentando assim sua produtividade.
+
+% Maleficios de LIMS  ( https://genemod.net/blog/lims-the-good-the-bad-and-the-ugly )
+
+Os problemas que podem vir da implementação de um LIMS é que, se mal implementado, a interface pode ser não intuitiva, de forma a denegrir a produtividade dos envolvidos. Caso este LIMS não integre com as partes laboratoriais, ele pode se tornar uma dificuldade a mais no dia a dia do usuario, tendo que repetir dados em locais diferentes pela falta de automação, fazendo com que a acuracia também caia - erros de entrada de dados no programa podem ocorrer.
+
+% Porque são importantes
+
+% Como guardam os dados
+
+Os dados de um LIMS precisam ser guardados em bancos de dados seguros e apenas liberar o acesso a esses dados para pessoas autorizadas, então é necessário que tenha um modelo de segurança de acesso integrado para que isso seja possível. isso é necessário \NO pois os dados que estão nestes LIMS, muitas vezes, são dados sensíveis e que não podem cair em mãos erradas \R \NO.
+
+% Como lidam com segurança dos dados
+
+Desta forma, é implementada uma hierarquia de usuários para que cada classe de usuário (Gerente, cientista, técnico...) tenha diferentes tipos de acesso aos dados.
+
+% Benefícios de sua utilização
+
+% Malefícios de sua utilização
+
+% Arquitetura: Como são construídos (Seguindo que base)
+
+% Como há a disponibilização de dados aos usuários
+
+% Problemas atuais
+
+% Beneficios que BPM trazem no LIMS
+
+% Problemas que BPMs trazem no LIMS

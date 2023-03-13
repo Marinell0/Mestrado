@@ -1,0 +1,31 @@
+\subsection{Flux} \label{sec:flux}
+
+% O que é o Flux
+
+O LIMS Flux é um sistema de gerenciamento de informações de laboratório (LIMS) que permite que laboratórios gerenciem e rastreiem seus processos e dados de amostras. O LIMS Flux é um software baseado em nuvem que pode ser acessado de qualquer lugar, a qualquer momento, através de um navegador da web.
+
+O sistema é altamente configurável e pode ser personalizado para atender às necessidades específicas de cada laboratório. Ele é projetado para ajudar laboratórios a gerenciar fluxos de trabalho, desde o registro de amostras até a geração de relatórios finais.
+
+Ele pode ser considerado um meta LIMS \R: O software pode ser utilizado para criação de workflows (fluxos de trabalho) com atividades e atributos que seguem os padrões de um laboratório ou telemedicina, conseguindo automatizar o input de atributos e integrar com o restante do laboratório independente de outros softwares utilizados.
+
+% Porque o Flux foi utilizado
+
+O Flux foi utilizado pela facilidade na modelagem de workflows variados utilizando BPM. Tendo em mente quais problemas seriam atacados neste documento (Falados nas próximas seções), o Flux foi modificado para atender às demandas para resolução dos mesmos, como alteração da interface a depender do usuário que está utilizando do software, apresentação mais rápida das informações para os usuários, diminuindo o tempo de busca dentro do programa.
+
+% Como o Flux utiliza Business Process Model
+
+O Flux utiliza o conceito de BPM na construção de seus workflows, definindo cada parte do fluxo de trabalho como atividades e como atributos as informações dentro de cada atividade. Com isso, pode-se construir qualquer tipo de workflow dentro do Flux, podendo abstrair BPMs para serem implementados.
+
+Com isso, há uma maior flexibilidade na modelagem dos processos dentro do software, diminuindo os custos de desenvolvimento de software já que qualquer pessoa que tem o conhecimento do próprio software e BPMs consegue desenvolver um fluxo de trabalho de um modelo de negócios.
+
+Isso diminui (mas não elimina) alguns dos problemas que envolvem LIMS que implementam BPMs de custo elevado pela complexidade de desenvolvimento do programa pois ainda necessita de pessoas que sabem modelar os processos mas não necessariamente que sejam desenvolvedores de software.
+
+% Como o Flux revela o problema de todos os LIMS com BPM
+
+O Flux consegue demonstrar um problema que a maioria dos LIMS sofrem: A dificuldade de obtenção de dados quando um workflow for utilizado por várias pessoas ou que o workflow seja muito complexo, tendo muitas atividades dentro do mesmo \R. Com múltiplas pessoas tendo diferentes funções dentro da empresa, nem todas necessitam das mesmas informações para concluir seus trabalhos.
+
+Os BPMs não citam nenhuma maneira de filtragem de dados já que são apenas uma maneira de descrever um fluxo de trabalhos e modelagem de processos, ficando a dever do LIMS de implementar algum tipo de recurso para disponibilização de informações aos usuários.
+
+Quando o fluxo de trabalho é muito grande, tomamos tempo do usuário fazendo-o procurar dentro do fluxo de trabalho, dentre inúmeras informações disponíveis, a informação que ele deve encontrar. Isso faz com que o usuário perca tempo em forma de inúmeros cliques dentro de uma interface que muitas vezes não é intuitiva \R.
+
+Para a telemedicina, isso é de suma importância pois os médicos, usuários do LIMS, não gostam de diminuir a eficiência dos seus trabalhos deixando de usar o método já utilizado no hospital que trabalham, muitas vezes armazenando dados em papel, para aprender a utilizar uma nova interface de um novo software implementado pelo hospital.
