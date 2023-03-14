@@ -21,7 +21,7 @@ Sendo assim, o Flux pode ser integrado com todo o laboratório, não sendo neces
 
 \subsubsection{Utilização do Flux}
 
-O Flux foi utilizado pela facilidade na modelagem de workflows variados utilizando BPM. Tendo em mente quais problemas seriam atacados neste documento (Falados nas próximas seções), o Flux foi modificado para atender às demandas para resolução dos mesmos, como alteração da interface a depender do usuário que está utilizando do software, apresentação mais rápida das informações para os usuários, diminuindo o tempo de busca dentro do programa.
+O Flux foi utilizado pela facilidade na modelagem de workflows variados utilizando BPM. Tendo em mente quais problemas seriam atacados neste documento (Falados nas próximas seções), o Flux foi modificado para atender às demandas para resolução dos mesmos, como alteração da interface a depender do usuário que está utilizando do software, apresentando informações mais rapidamente para os usuários, diminuindo o tempo de busca dentro do programa e também a troca de informações entre diferentes BPMs, unificando a modelagem de diferentes tipos de workflows em um grande BPM com diferentes atividades iniciais.
 
 % Como o Flux utiliza Business Process Model
 
@@ -31,10 +31,12 @@ Isso diminui (mas não elimina) alguns dos problemas que envolvem LIMS que imple
 
 % Como o Flux revela o problema de todos os LIMS com BPM
 
-O Flux consegue demonstrar um problema que pode surgir nos LIMS: A dificuldade de obtenção de dados quando um workflow for utilizado por várias pessoas ou quando o workflow é muito complexo, tendo muitas atividades, ou seja, vários passos dentro de uma modelagem de negócios específica \R. Com múltiplas pessoas tendo diferentes funções dentro do mesmo workflow, é muito improvável que todas elas estejam fazendo a mesma função e necessitando das mesmas informações.
+Com o Flux, construímos BPMs complexos para serem implementados no software, demonstrando a necessidade de melhorias na obtenção de dados para agilizar o trabalho dos usuários. Os BPMs complexos que foram utilizados são utilizados hoje por organizações que utilizam o Flux como ponto central nos trabalhos feitos.
 
 Os BPMs disponibilizam nenhuma forma de filtragem de dados já que são apenas uma maneira de descrever um fluxo de trabalhos e modelagem de processos, ficando a dever do LIMS de implementar algum tipo de recurso para disponibilização de informações aos usuários.
 
 Quando o fluxo de trabalho é muito grande, tomamos tempo do usuário, fazendo-o procurar dentro do fluxo de trabalho, dentre inúmeras informações disponíveis, a informação que ele deve encontrar. Isso faz com que o usuário perca tempo em forma de inúmeros cliques dentro de uma interface que muitas vezes não é intuitiva \R.
+
+Com múltiplas pessoas tendo diferentes funções dentro do mesmo workflow, é muito improvável que todas elas estejam fazendo a mesma função e necessitando das mesmas informações. A interface, então, deve ser alterada para que cada usuário tenha uma visão diferente quando está utilizando o LIMS para que, com uma experiência personalizada, haja uma diminuição do tempo de procura das informações buscadas.
 
 Para a telemedicina, isso é de suma importância pois os médicos, que podem se tornar usuários de um LIMS, não gostam de diminuir a eficiência dos seus trabalhos aprendendo uma ferramenta nova e modelos de trabalho novos sendo que o modelo existente para armazenamento de dados já funciona para eles, então o LIMS deve ser intuitivo, personalizável e disponibilizar as informações necessárias com a menor resistência possível para o usuário.
