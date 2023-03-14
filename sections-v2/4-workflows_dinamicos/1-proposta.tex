@@ -1,5 +1,9 @@
 \subsection{Proposta}
 
+Workflows dinâmicos tem como objetivo aumentar a velocidade do acesso aos dados dando a possibilidade ao usuário de selecionar uma atividade a ser focada como atividade principal no momento do acesso. Essa implementação muda a ordem do BPM modelado, permitindo que a atividade selecionada vire a primeira atividade do BPM, ou seja, essa será a primeira atividade que o usuário irá visualizar quando acessar o workflow.
+
+Isso permite que o usuário visualize a atividade com as informações de importância pontual, pulando atividades que não contêm informações necessárias no momento. Com o foco da visualização na atividade selecionada, também há a disponibilização de dados antigos para que, na necessidade de algum dado anterior, ele ainda esteja disponível para acesso.
+
 \subsubsection{Troca de ordem de atividades}
 
 % Troca de ordem de atividades
@@ -8,7 +12,9 @@
 
 % Isso já é possibilitado pelos BPMs?
 
-Isso já pode ser feito com BPMs na parte de modelagem do mesmo, mas com grandes ressalvas nas partes de segurança, automação e eficiência, já que as atividades do BPM podem ter dependências entre si. Isso já é tratado pelo Flux, disponibilizando as informações de maneira a apenas acelerar a visualização das informações pelo usuário
+A possibilidade de alteração no foco de atividades não é possível com BPMs, pois a modelagem feita necessita que ela siga uma ordem fixa do processo de negócios para que não ocorra nenhum erro de dependência de atividades. Para isso, o Flux utiliza do BPM para saber quais atividades estão disponíveis para serem focadas e, assim, caso selecionadas, alterar o BPM para que a atividade inicial do BPM seja a atividade focada, alterando a ordem de execução do BPM mas ainda mantendo as dependências entre atividades.
+
+% Isso já pode ser feito com BPMs na parte de modelagem do mesmo, mas com grandes ressalvas nas partes de segurança, automação e eficiência, já que as atividades do BPM podem ter dependências entre si. Isso já é tratado pelo Flux, disponibilizando as informações de maneira a apenas acelerar a visualização das informações pelo usuário
 
 % O que isso traz para os usuários
 
