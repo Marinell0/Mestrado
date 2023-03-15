@@ -25,3 +25,13 @@ Cada workflow pode ser criado através do editor de workflows que existe dentro 
 O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar nenhuma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído.
 
 Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai delas for executada.
+
+\subsubsection{Usuários do Flux}
+
+Existem dois tipos de usuários dentro do Flux: Usuários administradores e usuários comuns.
+
+Usuários administradores podem gerenciar todos os quesitos do LIMS para que ele seja moldado para a organização a que pertence. Administradores podem criar workflows dentro do software, configurar permissões de usuários comuns sobre o acesso deles a atividades, instâncias e workflows, além de gerenciar as contas dos próprios usuários comuns.
+
+Os usuários comuns são pessoas que apenas executarão os workflows criados pelos administradores. O usuário comum só poderá visualizar, aprovar, executar, gerar relatórios de atividades que lhe foi dado permissão pelos administradores.
+
+Múltiplos usuários podem executar instâncias diferentes ou até mesmo a mesma instância de um workflow utilizando o Flux. Desta maneira, pode-se integrar múltiplos participantes de um mesmo processo para executarem em paralelo atividades que façam parte do mesmo BPM.
