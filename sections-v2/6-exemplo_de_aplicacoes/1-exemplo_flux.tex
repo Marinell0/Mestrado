@@ -12,6 +12,10 @@ Com a implementação de workflows dinâmicos, foi necessário a utilização de
 
 No software, instâncias ainda são criadas apenas para a atividade original, mas por baixo dos panos, para disponibilizar as informações para o usuário de maneira conveniente, é criado uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
 
+É importante que estas instâncias auxiliares não sejam salvas para que não haja duplicação de dados do workflow e para não ocorrer alterações no BPM original. A ordem das atividades sempre deve seguir a estrutura original do BPM para manter o fluxo desejado quando ele foi modelado.
+
+Se a estrutura do BPM mudar de uma maneira a disponibilizar atividades antes de uma dependência, isso pode causar um fluxo de trabalho errôneo que não segue as restrições modeladas quando o workflow foi implementado no sistema, e isso não pode ocorrer para que o BPM ainda esteja em conformidade com as diretrizes do laboratório.
+
 Para selecionar qual atividade inicial será utilizada na visualização atual, foi alterada a interface para adicionar um seletor de atividades, disponibilizando todas as atividades que o usuário tem permissão de acessar em uma lista ordenada pelo nome da mesma. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
 Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão (Como podemos ver na figura \ref{fig:centrare_seletor_normal}). Quando o usuário seleciona uma atividade para ser focada, temos a alteração da interface para mostrar, como instância, todas as atividades executadas da atividade que o usuário selecionou no seletor (Como podemos ver na figura \ref{fig:centrare_seletor_alterado}).
