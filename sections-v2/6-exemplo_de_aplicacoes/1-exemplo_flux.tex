@@ -4,7 +4,7 @@ O LIMS Flux foi utilizado para implementação dos recursos de workflows dinâmi
 
 Como estes recursos alteram como a visualização de um BPM ocorre, foram necessário ajustes para que a implementação de tais recursos fosse feita de maneira correta e consistente, sem que a alteração na visualização deixasse o LIMS com vulnerabilidades de segurança e que as informações estivessem sempre disponíveis quando necessário.
 
-\subsubsection{Alterações feitas para workflows dinâmicos}
+\subsection{Alterações feitas para workflow dinâmicos}
 
 Para que o Flux pudesse focar em uma atividade dentro do workflow, alteramos a definição de instância do programa. Anteriormente, instâncias eram definidas como o inicio do fluxo de trabalho do usuário para execução do BPM.
 
@@ -66,14 +66,28 @@ No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente
 
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 
-BPMs não tem suporte para múltiplas atividades iniciais: Um processo deve iniciar e terminar da mesma forma, passando por todo o fluxo de trabalho da organização. \R
-Como um mesmo workflow pode ter troca de informações com alguma parte de outros workflows, foi idealizado uma nova funcionalidade para u workflow: Múltiplas atividades iniciais.
+Segundo o BPMN, é possível que existam múltiplas atividades iniciais para um workflow, contanto que exista uma atividade inicial e uma atividade final para determinado tipo de execução de um BPM.
 
-Com múltiplas atividades iniciais, é possível agregar diversos workflows que tratam do mesmo laboratório juntos, e cada usuário escolhe em que parte do workflow ele quer (e pode) iniciar um novo trabalho.
+O Oracle BPM define que é necessário definir um ponto de início e um ponto de fim para um BPM, sendo possível a definição de múltiplos pontos iniciais, mas que cada ponto inicial criado defina uma instância diferente para execução o BPM \ref{BPMNReference}.
 
-Assim, quando se inicia os trabalhos em uma parte diferente de um workflow, e este workflow se comunica com outro BPM, pode-se fazer uma requisição de informações ou execução de atividade por meio do sistema de permissões.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/BPM/Oracle_BPMN.png}
+    \caption{Definição da Oracle sobre o funcionamento de múltiplas atividades iniciais em um processo \cite{BPMNReference}. Um processo pode ser iniciado de diversas maneira, acarretando em um mesmo processo.}
+    \label{fig:oracle_bpmn}
+\end{figure}
+
+Como um mesmo workflow pode ter troca de informações com alguma parte de outros workflows, foi idealizado uma nova funcionalidade para um workflow no Flux: Múltiplas atividades iniciais que compartilham atividades entre instâncias no meio de sua execução.
+
+Com múltiplas atividades iniciais, é possível agregar diversos workflows que contém um fluxo de trabalho repetido (atividades que seguem o mesmo processo), com a disponibilização de atividades iniciais para usuários que têm permissão para executá-las.
+
+Com a execução de dois workflows agregados, cada execução iniciando de uma atividade inicial diferente, é possível o compartilhamento das atividades que contém um processo idêntico entre os dois workflows agregados, disponibilizando as informações para as instâncias selecionadas.
+
+Desta forma, aumenta-se a integração do sistema por haver a troca de informações entre processos de trabalho diferentes dentro de uma mesma organização, disponibilizando a cooperação entre usuários do mesmo sistema.
 
 \subsubsection{Como funciona}
+
+\subsubsection{Exemplos}
 
 Vamos utilizar o exemplo de um pedido de exame em um workflow médico e o recebimento deste pedido de exame e execução do mesmo.
 Um médico cria uma instância de paciente, cadastrando-o e seguindo o fluxo de trabalho comum de atendimento.
