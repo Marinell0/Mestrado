@@ -1,23 +1,8 @@
 \subsection{Flux}
 
-As propostas citadas necessitavam ser demonstradas em alguma plataforma LIMS que implementa BPMs como base de metodologia na construção de fluxos de trabalho. Com isso, escolhemos o Flux por causa de sua maleabilidade na criação de workflows e a utilização no passado da plataforma.
-
-O Flux é um meta LIMS: ele é capaz de, a partir de um BPM, implementá-lo em forma de fluxo de trabalho dentro do software, com um sistema de permissão robusto para dar aos usuários segurança de dados, além de diminuir o número de dados na tela que pode confundir que está o utilizando.
-
-O Workflow construído no Flux tem um formato de árvore: Uma atividade inicial, sendo uma atividade uma regra de negócio do BPM. Após a atividade inicial ser criada, é criada juntamente a ela uma instância, que separa diferentes processos do mesmo tipo um dos outros.
-
-Como exemplo, temos o cadastro de um paciente em um hospital. Se o cadastro for a primeira atividade do workflow, para dez pacientes a serem cadastrados, 10 instâncias serão criadas, uma para cada cadastro.
+As propostas citadas foram demonstradas na plataforma LIMS Flux que implementa BPMs como base de metodologia na construção de fluxos de trabalho. Para isso, foram feitas alterações no software para que o recurso pudesse ser implementado de maneira correta.
 
 Dentro das atividades temos atributos: Valores que podem ser preenchidos para descrever a atividade em questão. Voltando ao exemplo de cadastro de paciente, temos como exemplo de atributos dentro da atividade de cadastro o nome do paciente, data de nascimento, endereço, comorbidades, entre muitos outros que podem pertencer a esta atividade.
-
-Cada atividade pode ter atividades filhas, montando um fluxo de trabalho que podemos ver na imagem \ref{fig:estrutura_workflow}. Com isso, podemos construir um BPM seguindo as regras de negócio da empresa e implementar a funcionalidade da empresa escolhida.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{imgs/BPL/estrutura.png}
-    \caption{Estrutura de dois workflows: BPL - POP e BPL Equipamentos. A atividade inicial destes workflows são as atividades "Cadastro" e "Cadastro do equipamento", respectivamente.}
-    \label{fig:estrutura_workflow}
-\end{figure}
 
 A estrutura do workflow, as atividades e atributos dela podem ser todos construídos dentro do próprio software, facilitando a implementação destes no ambiente de trabalho, sem que seja necessário o conhecimento de programação.
 

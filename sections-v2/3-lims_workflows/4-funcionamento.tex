@@ -24,7 +24,14 @@ Cada workflow pode ser criado através do editor de workflows que existe dentro 
 
 O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar nenhuma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído.
 
-Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai delas for executada.
+Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai delas for executada. Podemos visualizar exemplos de workflow na figura \ref{fig:estrutura_workflow}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/BPL/estrutura.png}
+    \caption{Estrutura de dois workflows: BPL - POP e BPL Equipamentos. A atividade inicial destes workflows são as atividades "Cadastro" e "Cadastro do equipamento", respectivamente.}
+    \label{fig:estrutura_workflow}
+\end{figure}
 
 \subsubsection{Usuários do Flux}
 
