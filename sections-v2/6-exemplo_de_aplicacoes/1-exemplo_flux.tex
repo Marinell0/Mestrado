@@ -51,18 +51,18 @@ Na mesma figura \ref{fig:centrare_tree_normal_altered} temos as informações do
 
 Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a árvore de atividades é reajustada para que a atividade selecionada seja o foco principal da instância.
 
-Para isso, gira-se a árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta.
+Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente.
 
-As atividades anteriores continuam na árvore para que qualquer informação anterior que seja necessária para a execução de atividades posteriores fiquem disponíveis para serem visualizadas e utilizadas pelo usuário.
+Para isso, pode-se dizer que ocorre um "giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figure \ref{fig:primeira_implementacao}.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/Implementacoes/primeiraImplementacao.png}
-    \caption{Representação da primeira implementação de recursos: Workflows dinâmicos. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade inicial. Com isso, a seta em vermelho representa a alteração feita no workflow.}
+    \caption{Representação da implementação de workflows dinâmicas. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade focada apelo usuário. Com isso, a seta em vermelho representa o "giro" que o workflow faz para que a atividade selecionada vire a primeira atividade do workflow.}
     \label{fig:primeira_implementacao}
 \end{figure}
 
-No Flux, esta funcionalidade faz com que atividades antigas tenham uma cor diferente na interface do usuário para que seja claro que as atividades vistas pelo usuário são atividades anteriores da atividade selecionada.
+No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura \ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
 
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 
