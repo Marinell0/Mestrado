@@ -1,20 +1,18 @@
 \subsection{Flux}
 
-As propostas citadas foram demonstradas na plataforma LIMS Flux que implementa BPMs como base de metodologia na construção de fluxos de trabalho. Para isso, foram feitas alterações no software para que o recurso pudesse ser implementado de maneira correta.
+O LIMS Flux foi utilizado para implementação dos recursos de workflows dinâmicos e da agregação de múltiplos BPMs para troca de informações entre eles. Sua utilização foi feita pela facilidade na criação de workflows dentro do próprio software e a alta personalização disponibilizada.
 
-Dentro das atividades temos atributos: Valores que podem ser preenchidos para descrever a atividade em questão. Voltando ao exemplo de cadastro de paciente, temos como exemplo de atributos dentro da atividade de cadastro o nome do paciente, data de nascimento, endereço, comorbidades, entre muitos outros que podem pertencer a esta atividade.
+Como estes recursos alteram como a visualização de um BPM ocorre, foram necessário ajustes para que a implementação de tais recursos fosse feita de maneira correta e consistente, sem que a alteração na visualização deixasse o LIMS com vulnerabilidades de segurança e que as informações estivessem sempre disponíveis quando necessário.
 
-A estrutura do workflow, as atividades e atributos dela podem ser todos construídos dentro do próprio software, facilitando a implementação destes no ambiente de trabalho, sem que seja necessário o conhecimento de programação.
+\subsubsection{Alterações feitas para workflows dinâmicos}
 
-Existe a possibilidade de adicionar atributos estendidos para cada tipo de objeto, seja um atributo, seja atividade, instância ou até mesmo o próprio workflow.
+Para que o Flux pudesse focar em uma atividade dentro do workflow, alteramos a definição de instância do programa. Anteriormente, instâncias eram definidas como o inicio do fluxo de trabalho do usuário para execução do BPM.
 
-Ao criar os atributos, podemos especificar o tipo do atributo, seja um número, seja decimal, CPF ou um texto normal, como exemplos, para que seja facilitado o processo de análise dos dados que são cadastrados para cada pessoa.
+Com a implementação de workflows dinâmicos, foi necessário a utilização de instâncias como o ponto de partida de execução do usuário naquele momento, e não necessariamente o inicio do fluxo de trabalho. Instancias ainda podem ser utilizadas seguindo a definição anterior caso o usuário não selecione nenhuma atividade para ser focada (Ou selecione a atividade inicial original).
 
- \subsubsection{Alterações feitas para workflows dinâmicos}
+No software, instâncias ainda são criadas apenas para a atividade original, mas por baixo dos panos, para disponibilizar as informações para o usuário de maneira conveniente, é criado uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
 
-AS alterações feitas no software para que o workflow dinâmico pudesse ser implementadas foram as de criar uma instância auxiliar que contivesse todas as atividades já contidas na própria atividade, mas com uma atividade inicial diferente da original.
-
-Para selecionar qual atividade inicial será utilizada na visualização atual, também foi alterada a interface para adicionar um seletor. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
+Para selecionar qual atividade inicial será utilizada na visualização atual, foi alterada a interface para adicionar um seletor de atividades, disponibilizando todas as atividades que o usuário tem permissão de acessar em uma lista ordenada pelo nome da mesma. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
 Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão (Como podemos ver na figura \ref{fig:centrare_seletor_normal}). Quando o usuário seleciona uma atividade para ser focada, temos a alteração da interface para mostrar, como instância, todas as atividades executadas da atividade que o usuário selecionou no seletor (Como podemos ver na figura \ref{fig:centrare_seletor_alterado}).
 
@@ -32,9 +30,18 @@ Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada 
     \label{fig:centrare_seletor_alterado}
 \end{figure}
 
-Quando muda-se a estrutura do workflow, devemos ter cuidado com as informações anteriores que existiam e deixa-las disponíveis para acesso, já que o usuário pode querer vê-las durante a execução de outras atividades.
+A árvore de atividades também teve de ser alterada, com a criação de novos tipos de atividades: Atividades pai, ou atividades anteriores. Neste tipo de atividade (Identificados pela cor azul na figura \ref{fig:centrare_tree_normal_altered}), não é possível executar novas atividades, sendo existentes apenas por motivos de disponibilização de informações pertinentes à execução atual.
 
-Como exemplo, temos o cadastro de paciente na primeira atividade novamente. Caso o paciente for fazer uma cirurgia, que pode ser uma atividade mais profunda no workflow, devemos ter os dados do paciente disponíveis para o médico que irá realizar aquela atividade.
+Foi necessário a criação deste novo tipo de atividade para disponibilizar informações de atividades anteriores para o usuário, já que as informações podem ser pertinentes para o usuário.
+
+Na mesma figura \ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada "Cirurgia de Nariz".
+
+\begin{figure}
+    \centering
+    \includegraphics[height=1\textwidth]{imgs/CENTRARE/arvoreNormalEAlterada.png}
+    \caption{Imagem demonstrando a árvore de atividades no software original (Esquerda) e a árvore de atividades alterada (Direita). Como podemos ver, a atividade selecionada na esquerda que está no meio do workflow é a mesma atividade selecionada na direita, que agora virou a atividade focada por seleção do usuário. Atividades pai são demonstradas em azul, disponibilizando todas as informações existentes mesmo com a alteração do foco do workflow.}
+    \label{fig:centrare_tree_normal_altered}
+\end{figure}
 
 \subsubsection{Como funciona}
 
