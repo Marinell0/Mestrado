@@ -12,6 +12,13 @@ Dentro das atividades temos atributos: Valores que podem ser preenchidos para de
 
 Cada atividade pode ter atividades filhas, montando um fluxo de trabalho que podemos ver na imagem \ref{fig:estrutura_workflow}. Com isso, podemos construir um BPM seguindo as regras de negócio da empresa e implementar a funcionalidade da empresa escolhida.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/BPL/estrutura.png}
+    \caption{Estrutura de dois workflows: BPL - POP e BPL Equipamentos. A atividade inicial destes workflows são as atividades "Cadastro" e "Cadastro do equipamento", respectivamente.}
+    \label{fig:estrutura_workflow}
+\end{figure}
+
 A estrutura do workflow, as atividades e atributos dela podem ser todos construídos dentro do próprio software, facilitando a implementação destes no ambiente de trabalho, sem que seja necessário o conhecimento de programação.
 
 Existe a possibilidade de adicionar atributos estendidos para cada tipo de objeto, seja um atributo, seja atividade, instância ou até mesmo o próprio workflow.
@@ -22,7 +29,7 @@ Ao criar os atributos, podemos especificar o tipo do atributo, seja um número, 
 
 AS alterações feitas no software para que o workflow dinâmico pudesse ser implementadas foram as de criar uma instância auxiliar que contivesse todas as atividades já contidas na própria atividade, mas com uma atividade inicial diferente da original.
 
-Para selecionar qual atividade inicial será utilizada na visualiação atual, também foi alterada a interface para adicionar um seletor. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
+Para selecionar qual atividade inicial será utilizada na visualização atual, também foi alterada a interface para adicionar um seletor. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
 Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão.
 
@@ -65,7 +72,7 @@ Um médico cria uma instância de paciente, cadastrando-o e seguindo o fluxo de 
 O laboratórios do hospital também tem seu próprio workflow, onde são cadastrados equipamentos para análise de amostras.
 Antes, os workflows ficariam separados, sem comunicação entre eles.
 
-Com a nova feature implementada, os workflows podem compartilhar atividades como o pedido de exame: O médico tem a permissão de executar o pedido de exame, mas ele não aprova a atividade, quem irá aprovar a atividade é o técnico de laboratório.
+Com o novo recurso implementada, os workflows podem compartilhar atividades como o pedido de exame: O médico tem a permissão de executar o pedido de exame, mas ele não aprova a atividade, quem irá aprovar a atividade é o técnico de laboratório.
 
 O técnico de laboratório recebe uma notificação que a atividade foi executada e pode aprovar ou reprovar a atividade.
 Aprovando a atividade, o técnico continua com seu workflow normalmente até o resultado.
