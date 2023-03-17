@@ -87,6 +87,18 @@ Desta forma, aumenta-se a integração do sistema por haver a troca de informaç
 
 \subsubsection{Como funciona}
 
+Para compartilhar atividades entre múltiplos workflows, é necessário que estes workflows estejam juntos em uma mesma modelagem com múltiplas atividades iniciais.
+
+Para isso, foi alterado o editor de workflows já existente no Flux para que fosse possível criar múltiplas atividades iniciais, uma atividade inicial para cada workflow agregado.
+Os workflows não precisam ter atividades compartilhadas para estarem juntos, eles funcionarão como workflows normais, com criação de instâncias e atividades da mesma maneira, apenas estando sob o mesmo nome de workflow e dentro da mesma interface que disponibiliza as informações de um workflow, disponibilizando recursos como busca de informações e geração de relatório dentro do mesmo workflow.
+
+Quando for existir uma atividade compartilhada entre workflows, é necessário criar o fluxo de trabalho em um workflow, gerando todas as características necessárias para modelagem daquele processo. Logo após a criação das atividades, é necessário criar uma transição \textbf{(Explicar sobre transições anteriormente, junto a atividades e atributos)} de referência entre a atividade que será pai da atividade compartilhada em um workflow e a atividade compartilhada já criada no segundo workflow.
+
+Existem dois tipos de compartilhamento: Um compartilhamento geral, onde a atividade será compartilhada entre todas as instâncias existentes assim que ela for criada e um compartilhamento seletivo, onde o usuário escolhe qual instância receberá as informações da atividade executada.
+
+Nos dois casos, a disponibilização de atividades filhas da atividade compartilhada apenas não ocorre quando existir regras de permissões que não deixem certos usuários (ou grupos de usuários) acessar determinada atividade, caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
+Isso da uma ferramenta poderosa pela combinação do sistema de permissões e compartilhamento de atividades: A requisição de informações e a entrega das mesmas por dois setores diferentes de uma organização.
+
 \subsubsection{Exemplos}
 
 Vamos utilizar o exemplo de um pedido de exame em um workflow médico e o recebimento deste pedido de exame e execução do mesmo.
@@ -94,7 +106,7 @@ Um médico cria uma instância de paciente, cadastrando-o e seguindo o fluxo de 
 O laboratórios do hospital também tem seu próprio workflow, onde são cadastrados equipamentos para análise de amostras.
 Antes, os workflows ficariam separados, sem comunicação entre eles.
 
-Com o novo recurso implementado, os workflows podem compartilhar atividades como o pedido de exame: O médico tem a permissão de executar o pedido de exame, mas ele não aprova a atividade, quem irá aprovar a atividade é o técnico de laboratório.
+Com o novo recurso implementado, os workflows podem compartilhar atividades como o pedido de exame: O médico tem a permissão de executar o pedido de exame, mas ele não aprova a atividade. Quem irá aprovar a atividade é o técnico de laboratório.
 
 O técnico de laboratório recebe uma notificação que a atividade foi executada e pode aprovar ou reprovar a atividade.
 Aprovando a atividade, o técnico continua com seu workflow normalmente até o resultado.
