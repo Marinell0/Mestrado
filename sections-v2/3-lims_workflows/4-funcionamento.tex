@@ -70,3 +70,42 @@ Usuários administradores podem gerenciar todos os quesitos do LIMS para que ele
 Os usuários comuns são pessoas que apenas executarão os workflows criados pelos administradores. O usuário comum só poderá visualizar, aprovar, executar, gerar relatórios de atividades que lhe foi dado permissão pelos administradores.
 
 Múltiplos usuários podem executar instâncias diferentes ou até mesmo a mesma instância de um workflow utilizando o Flux. Desta maneira, pode-se integrar múltiplos participantes de um mesmo processo para executarem em paralelo atividades que façam parte do mesmo BPM.
+
+\subsubsection{Grupos de usuários}
+
+O Flux também permite a criação de grupos de usuários. A criação de grupos é feita pelo usuário administrador, que pode gerenciar quais usuários pertencem a que grupos.
+
+Estes grupos criados facilitam a atribuição de permissões em massa para workflows que serão compartilhados com muitos usuários.
+
+\subsubsection{Sistema de permissões}
+
+O Flux implementa um sistema de permissões completo, com diferentes níveis de permissão para atividades, instâncias e workflows.
+Um usuário administrador do sistema pode gerenciar tais permissões por meio da interface de permissões, que permite a configuração de permissões tanto para usuários individuais quanto para grupos de usuários.
+
+Existem 5 níveis de permissão no sistema hoje:
+
+\begin{itemize}
+    \item Visualização: Permite ao usuário visualizar a atividade.
+    \item Executar: Permite ao usuário inserir dados em uma atividade e executá-la (Gravá-la no banco de dados).
+    \item Editar: Permite que o usuário edite dados de uma atividade já executada.
+    \item Aprovar: Quando uma atividade for executada, seja pelo usuário com permissão ou por outro usuário, permite que o usuário aprove os dados da atividade. Atividades filhas só ficarão disponíveis com esta aprovação.
+    \item Gerar Relatório: Permite que o usuário imprima um relatório da atividade.
+\end{itemize}
+
+Cada uma dessas permissões podem ser atribuídas separadamente para cada usuário e/ou grupo de usuários, para cada atividade de um workflow (como demonstrado na figura \ref{fig:permission_activity_interface}).
+
+Caso um usuário pertença a um grupo de usuários que detêm um conjunto de permissões, este usuário irá receber todas as permissões atribuídas àquele grupo. Com isso, há uma maior facilidade para atribuição de permissões para múltiplos usuários ao mesmo tempo com a criação de grupos diferentes para cada setor da organização, já que pode existir um número grande de atividades no workflow modelado.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/Flux/Permissoes/telaPermissoesCENTRARE.png}
+    \caption{Interface para alteração de permissões de um workflow (neste caso, do workflow CENTRARE). Caso um usuário não tenha nenhuma permissão em um workflow, o workflow não aparece na interface deste usuário (Usuários desmarcados no canto direto da tela).}
+    \label{fig:permission_interface}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/Flux/Permissoes/telaPermissoeAstividadesCENTRARE.png}
+    \caption{Tela para adição de permissões em atividades do workflow CENTRARE. O usuário administrador pode atribuir permissões diferentes para cada atividade, para cada usuário ou grupo de usuários.}
+    \label{fig:permission_activity_interface}
+\end{figure}
