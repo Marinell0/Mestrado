@@ -33,6 +33,34 @@ Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execu�
     \label{fig:estrutura_workflow}
 \end{figure}
 
+\subsubsection{Transições} \label{sec:transitions}
+
+No Flux existe o conceito de transições. Uma transição define uma relação de dependência entre duas atividades. Para que exista uma atividade B filha de A, deve-se existir uma transição entre elas. Cada transição demonstra uma relação de dependência entre as atividades filha e as atividades pai (como visto na figura \ref{fig:transitions})
+
+Também ocorre a existência de "referências", que nada mais é a criação de uma transição entre atividades que não são filhas. Quando isso ocorre, a transição criada dita que existe uma correlação de dependência entre duas atividades sem a necessidade delas estarem na mesma subárvore de um workflow.
+
+Caso exista múltiplas transições de atividades pai para uma filha (por meio de referências), a atividade será disponibilizada na execução de qualquer uma das atividades pai da mesma.
+
+\begin{figure}
+    \centering
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{imgs/Flux/Transicoes/normal.png}
+        \caption{Transições entre atividades. Atividade A é a atividade inicial e tem duas atividades filhas: B e C. Delas, temos a atividade D que é filha de B e a atividade E que é filha de C.}
+        \label{fig:transition_normal}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{imgs/Flux/Transicoes/referencia.png}
+        \caption{Neste exemplo temos as mesmas transições mostradas em \ref{fig:transition_normal}, mas com uma referência da atividade E para a atividade D (demonstrada pela seta pontilhada). A atividade D será disponibilizada quando o usuário executar a atividade B OU quando executar a atividade E.}
+        \label{fig:transition_ref}
+    \end{subfigure}
+    \caption{Demonstração de transições entre atividades dentro do Flux. Cada atividade é representada por um circulo e cada seta entre círculos representa uma transição.}
+    \label{fig:transitions}
+\end{figure}
+
 \subsubsection{Usuários do Flux}
 
 Existem dois tipos de usuários dentro do Flux: Usuários administradores e usuários comuns.
