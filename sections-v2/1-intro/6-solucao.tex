@@ -2,15 +2,23 @@
 
 % Qual LIMS foi utilizado
 
-Para que a personalização da interface do usuário seja integrada com BPMs, foi envisionado uma nova maneira de execução de fluxo de trabalho de BPMs dentro de um LIMS. Para isso, foi utilizado o LIMS Flux (mais explicado na seção \ref{sec:flux}) para implementação de workflows dinâmicos.
+Para que a personalização da interface do usuário seja integrada com BPMs, foi visionado uma nova maneira de execução de fluxo de trabalho de BPMs dentro de um LIMS. Para isso, foi utilizado o LIMS Flux (mais explicado na seção \ref{sec:flux}) para implementação de workflows dinâmicos.
 
 Workflows dinâmicos permitem que o usuário centralize sua visão em uma atividade central dentro desejada, sendo particularmente útil em organizações que possuem workflows onde as atividades podem ser complexas e envolver várias etapas.
 
+% Quem isso afeta e porque é importante?
+
 A funcionalidade de centralização de atividade dentro de um workflow pode ser utilizada pelos usuários para selecionar a atividade desejada para obter dados requeridos de maneira mais rápido, atendendo às necessidades específicas daquele usuário de maneira pontual. Isso permite que cada pessoa se concentre nas atividades que são mais relevantes para suas tarefas no momento da utilização do software, personalizando seu uso.
+
+Quando o usuário seleciona uma atividade a ser centralizada, o LIMS altera a ordem do BPM para que o usuário tenha uma melhor visualização do workflow, transformando a atividade selecionada na atividade inicial do BPM.
+
+Atividades passadas ficam disponíveis para obtenção de dados de outras atividades que podem ser necessários para execução da atividade centralizada, sendo disponíveis com mudanças na interface para identificar que a atividade é anterior à selecionada.
 
 % Solução quanto ao acesso de informações resolvida com o trabalho
 
-% Quem isso afeta e porque é importante?
+Para que esta implementação fosse mais poderosa no sistema, também foi implementado a junção de diferentes BPMs em um único BPM com múltiplas atividades iniciais que podem ser compartilhadas entre eles. Assim, quando um usuário faz mais de uma função em um laboratório, ele pode acessar os diferentes fluxos de trabalho da mesma interface, até mesmo centralizando as atividades dos diferentes workflows com a funcionalidade explicada anteriormente.
+
+Isso ajuda a unificar as informações dentro do sistema dentro de uma única interface, facilitando o acesso às informações e aumentando a eficiência da utilização do LIMS. 
 
 % Como foi feito
 
