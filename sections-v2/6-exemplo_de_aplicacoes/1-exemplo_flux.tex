@@ -10,7 +10,7 @@ Para que o Flux pudesse focar em uma atividade dentro do workflow, alteramos a d
 
 Com a implementação de workflows dinâmicos, foi necessário a utilização de instâncias como o ponto de partida de execução do usuário naquele momento, e não necessariamente o inicio do fluxo de trabalho. Instancias ainda podem ser utilizadas seguindo a definição anterior caso o usuário não selecione nenhuma atividade para ser focada (Ou selecione a atividade inicial original).
 
-No software, instâncias ainda são criadas apenas para a atividade original, mas por baixo dos panos, para disponibilizar as informações para o usuário de maneira conveniente, é criado uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
+No software, instâncias ainda são criadas apenas para a atividade original, mas de maneira oculta, para disponibilizar as informações para o usuário de maneira conveniente, é criado uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
 
 É importante que estas instâncias auxiliares não sejam salvas para que não haja duplicação de dados do workflow e para não ocorrer alterações no BPM original. A ordem das atividades sempre deve seguir a estrutura original do BPM para manter o fluxo desejado quando ele foi modelado.
 
