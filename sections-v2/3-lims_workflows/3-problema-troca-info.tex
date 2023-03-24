@@ -6,7 +6,6 @@ Quando existe um workflow que é utilizado por muitos usuários, muitas vezes é
 
 % Troca de informações entre essas pessoas
 
-Utilizando o sistema de permissões utilizado no LIMS Flux \R e a reestruturação feita no software para permitir que atividades feitas na modelagem do BPM utilizado dentro do software possam conversar entre si fazem com que essa seja uma ferramenta poderosa para que múltiplos workflows de um mesmo laboratório possam se juntar, tendo comunicação entre os usuários e aumentando a integração entre as partes de uma organização.
 
 % O que a troca de informações possibilita
 
@@ -15,7 +14,7 @@ Utilizando o sistema de permissões utilizado no LIMS Flux \R e a reestruturaç�
 
 % Facilidades para usuários
 
-Uma visão macro do workflow, ou seja, uma visão de todos os workflows em uma mesma estrutura e em uma mesma interface, ajuda por exemplo, um gerente de laboratório a visualizar quais trabalhos estão sendo feitos e obter dados como quais atividades devem ser feitas com mais frequência, onde estão as ineficiências do laboratório e como melhora-las.
+Uma visão macro do workflow, ou seja, uma visão de todos os workflows em uma mesma estrutura e em uma mesma interface, ajuda por exemplo, um gerente de laboratório a visualizar quais trabalhos estão sendo feitos e obter dados como quais atividades devem ser feitas com mais frequência, onde estão as ineficiências do laboratório e como melhorá-las.
 
 O compartilhamento de informações entre funcionários da organização que implementa o LIMS com compartilhamento de informações entre atividades ganha maior eficiência por ter todos os dados necessários para o seu trabalho dentro da mesma interface já utilizada.
 
@@ -24,3 +23,7 @@ A organização é otimizada com a maior integração do software nos afazeres d
 % Faciliades para consumo dos dados por analise
 
 A comunicação entre workflows permite que exista uma auditoria dentro do LIMS para cada troca de informações, facilitando a análise do processo como um todo, que é o objetivo da implementação de um BPM para modelar um processo de negócios. Temos o tempo de resposta entre workflows distintos dentro da empresa, dados sobre a comunicação que poderiam ser perdido, maior automação dos processos como um envio de uma amostra diretamente para o usuário interessado ou até mesmo para a própria máquina que lê os dados e já os processa.
+
+Esta comunicação entre workflows ocorre compartilhando informações de uma mesma atividade entre múltiplas instâncias de BPMs diferentes, unidos em um mesmo workflow com múltiplas atividades inicial. Isto é, uma mesma atividade A executada pode ser acessada por todos os fluxos de trabalho que contém aquela atividade sendo compartilhada entre elas.
+
+Utilizando o sistema de permissões utilizado no LIMS Flux \R e a reestruturação feita no software para permitir que atividades possam conversar entre si, pode ser feita uma implementação de troca de informações e compartilhamento de trabalhos com diferentes setores de uma empresa, tornando uma ferramenta poderosa para que múltiplos workflows de um mesmo laboratório possam se juntar, tendo comunicação entre os usuários e aumentando a integração.
