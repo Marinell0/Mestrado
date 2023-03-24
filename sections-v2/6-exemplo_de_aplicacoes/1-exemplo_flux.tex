@@ -23,14 +23,14 @@ Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito "Selecione uma atividade", indicando que ele não foi alterado e a atividade que está sendo mostrada é atividade inicial original deste workflow.}
+    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Selecione uma atividade", indicando que ele não foi alterado e a atividade que está sendo mostrada é atividade inicial original deste workflow.}
     \label{fig:centrare_seletor_normal}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito "Cirurgia de Nariz", indicando que o usuário selecionou a atividade com este nome para ser focada e utilizada como atividade inicial. Como podemos ver pela tabela, temos todas as atividades "Cirurgia de nariz" representadas como instâncias do workflow.}
+    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Cirurgia de Nariz", indicando que o usuário selecionou a atividade com este nome para ser focada e utilizada como atividade inicial. Como podemos ver pela tabela, temos todas as atividades ``Cirurgia de nariz" representadas como instâncias do workflow.}
     \label{fig:centrare_seletor_alterado}
 \end{figure}
 
@@ -38,7 +38,7 @@ A árvore de atividades também teve de ser alterada, com a criação de novos t
 
 Foi necessário a criação deste novo tipo de atividade para disponibilizar informações de atividades anteriores para o usuário, já que as informações podem ser pertinentes para o usuário.
 
-Na mesma figura~\ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada "Cirurgia de Nariz".
+Na mesma figura~\ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada ``Cirurgia de Nariz".
 
 \begin{figure}
     \centering
@@ -53,12 +53,12 @@ Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a
 
 Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente.
 
-Para isso, pode-se dizer que ocorre um "giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figure~\ref{fig:primeira_implementacao}.
+Para isso, pode-se dizer que ocorre um ``giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figure~\ref{fig:primeira_implementacao}.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/Implementacoes/primeiraImplementacao.png}
-    \caption{Representação da implementação de workflows dinâmicas. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade focada apelo usuário. Com isso, a seta em vermelho representa o "giro" que o workflow faz para que a atividade selecionada vire a primeira atividade do workflow.}
+    \caption{Representação da implementação de workflows dinâmicas. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade focada apelo usuário. Com isso, a seta em vermelho representa o ``giro" que o workflow faz para que a atividade selecionada vire a primeira atividade do workflow.}
     \label{fig:primeira_implementacao}
 \end{figure}
 
