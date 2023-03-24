@@ -18,7 +18,7 @@ Se a estrutura do BPM mudar de uma maneira a disponibilizar atividades antes de 
 
 Para selecionar qual atividade inicial será utilizada na visualização atual, foi alterada a interface para adicionar um seletor de atividades, disponibilizando todas as atividades que o usuário tem permissão de acessar em uma lista ordenada pelo nome da mesma. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
-Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão (Como podemos ver na figura \ref{fig:centrare_seletor_normal}). Quando o usuário seleciona uma atividade para ser focada, temos a alteração da interface para mostrar, como instância, todas as atividades executadas da atividade que o usuário selecionou no seletor (Como podemos ver na figura \ref{fig:centrare_seletor_alterado}).
+Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão (Como podemos ver na figura~\ref{fig:centrare_seletor_normal}). Quando o usuário seleciona uma atividade para ser focada, temos a alteração da interface para mostrar, como instância, todas as atividades executadas da atividade que o usuário selecionou no seletor (Como podemos ver na figura~\ref{fig:centrare_seletor_alterado}).
 
 \begin{figure}
     \centering
@@ -34,11 +34,11 @@ Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada 
     \label{fig:centrare_seletor_alterado}
 \end{figure}
 
-A árvore de atividades também teve de ser alterada, com a criação de novos tipos de atividades: Atividades pai, ou atividades anteriores. Neste tipo de atividade (Identificados pela cor azul na figura \ref{fig:centrare_tree_normal_altered}), não é possível executar novas atividades, sendo existentes apenas por motivos de disponibilização de informações pertinentes à execução atual.
+A árvore de atividades também teve de ser alterada, com a criação de novos tipos de atividades: Atividades pai, ou atividades anteriores. Neste tipo de atividade (Identificados pela cor azul na figura~\ref{fig:centrare_tree_normal_altered}), não é possível executar novas atividades, sendo existentes apenas por motivos de disponibilização de informações pertinentes à execução atual.
 
 Foi necessário a criação deste novo tipo de atividade para disponibilizar informações de atividades anteriores para o usuário, já que as informações podem ser pertinentes para o usuário.
 
-Na mesma figura \ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada "Cirurgia de Nariz".
+Na mesma figura~\ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada "Cirurgia de Nariz".
 
 \begin{figure}
     \centering
@@ -53,7 +53,7 @@ Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a
 
 Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente.
 
-Para isso, pode-se dizer que ocorre um "giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figure \ref{fig:primeira_implementacao}.
+Para isso, pode-se dizer que ocorre um "giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figure~\ref{fig:primeira_implementacao}.
 
 \begin{figure}
     \centering
@@ -62,18 +62,18 @@ Para isso, pode-se dizer que ocorre um "giro" na árvore de atividades para a di
     \label{fig:primeira_implementacao}
 \end{figure}
 
-No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura \ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
+No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
 
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 
 Segundo o BPMN, é possível que existam múltiplas atividades iniciais para um workflow, contanto que exista uma atividade inicial e uma atividade final para determinado tipo de execução de um BPM.
 
-O Oracle BPM define que é necessário definir um ponto de início e um ponto de fim para um BPM, sendo possível a definição de múltiplos pontos iniciais, mas que cada ponto inicial criado defina uma instância diferente para execução o BPM \ref{BPMNReference}.
+O Oracle BPM define que é necessário definir um ponto de início e um ponto de fim para um BPM, sendo possível a definição de múltiplos pontos iniciais, mas que cada ponto inicial criado defina uma instância diferente para execução o BPM~\ref{BPMNReference}.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/BPM/Oracle_BPMN.png}
-    \caption{Definição da Oracle sobre o funcionamento de múltiplas atividades iniciais em um processo \cite{BPMNReference}. Um processo pode ser iniciado de diversas maneira, acarretando em um mesmo processo.}
+    \caption{Definição da Oracle sobre o funcionamento de múltiplas atividades iniciais em um processo~\cite{BPMNReference}. Um processo pode ser iniciado de diversas maneira, acarretando em um mesmo processo.}
     \label{fig:oracle_bpmn}
 \end{figure}
 
@@ -113,7 +113,7 @@ Aprovando a atividade, o técnico continua com seu workflow normalmente até o r
 Caso o médico tenha permissão de visualizar as atividades entre o pedido de exame e resultado do exame, o médico poderá ver todo o processo de análise.
 Caso contrário, o sistema de permissões controla o que o médico poderá ver, que será o pedido de exame e o resultado do exame.
 
-Assim, a árvore de atividades, caso o médico tenha permissão de visualizar apenas o pedido de exame e a execução, fica da maneira representada na figura \ref{fig:segunda_implementacao}
+Assim, a árvore de atividades, caso o médico tenha permissão de visualizar apenas o pedido de exame e a execução, fica da maneira representada na figura~\ref{fig:segunda_implementacao}
 
 \begin{figure}
     \centering

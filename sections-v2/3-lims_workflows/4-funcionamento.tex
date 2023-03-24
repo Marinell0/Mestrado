@@ -6,12 +6,12 @@ Esta seção irá esclarecer como o Flux denomina cada parte do BPM e como é fe
 
 Os atributos de uma atividade definem as informações que poderão ser acrescentadas a uma atividade, isto é, os atributos definem quais dados poderão ser adicionados a cada atividade, definindo também seu tipo (número, texto...), obrigatoriedade, correlação com outros atributos, e um conjunto de atributos em um passo específico de um workflow forma uma atividade.
 
-Uma atividade em um workflow define um passo no BPM modelado. Em um workflow, podem existir qualquer número de atividades, sendo uma atividade inicial para iniciar o BPM, seguido de atividades dependentes das atividades anteriores em um formato de árvore na definição computacional, como podemos ver na figura \ref{fig:bpmn_diagram}
+Uma atividade em um workflow define um passo no BPM modelado. Em um workflow, podem existir qualquer número de atividades, sendo uma atividade inicial para iniciar o BPM, seguido de atividades dependentes das atividades anteriores em um formato de árvore na definição computacional, como podemos ver na figura~\ref{fig:bpmn_diagram}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{imgs/BPM/bpmn_diagram.png}
-    \caption{Exemplo de um diagrama projetado utilizando BPMN. Imagem da IBM \cite{TheIBM}}
+    \caption{Exemplo de um diagrama projetado utilizando BPMN. Imagem da IBM~\cite{TheIBM}}
     \label{fig:bpmn_diagram}
 \end{figure}
 
@@ -22,9 +22,9 @@ Para isso, o Flux utiliza de instâncias, que nada mais é que uma separação e
 Um workflow pode ter uma ou mais instâncias, sendo a execução delas o ponto principal do Flux.
 Cada workflow pode ser criado através do editor de workflows que existe dentro do próprio Flux, onde podem ser construídos e editados para seguirem um BPM modelado para a organização que irá utilizá-lo.
 
-O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar nenhuma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído (Podemos ver um exemplo do workflow CENTRARE na figura \ref{fig:editor_centrare}).
+O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar nenhuma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído (Podemos ver um exemplo do workflow CENTRARE na figura~\ref{fig:editor_centrare}).
 
-Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai delas for executada. Podemos visualizar exemplos de workflow na figura \ref{fig:estrutura_workflow}.
+Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai delas for executada. Podemos visualizar exemplos de workflow na figura~\ref{fig:estrutura_workflow}.
 
 \begin{figure}
     \centering
@@ -42,7 +42,7 @@ Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execu�
 
 \subsubsection{Transições} \label{sec:transitions}
 
-No Flux existe o conceito de transições. Uma transição define uma relação de dependência entre duas atividades. Para que exista uma atividade B filha de A, deve-se existir uma transição entre elas. Cada transição demonstra uma relação de dependência entre as atividades filha e as atividades pai (como visto na figura \ref{fig:transitions})
+No Flux existe o conceito de transições. Uma transição define uma relação de dependência entre duas atividades. Para que exista uma atividade B filha de A, deve-se existir uma transição entre elas. Cada transição demonstra uma relação de dependência entre as atividades filha e as atividades pai (como visto na figura~\ref{fig:transitions})
 
 Também ocorre a existência de "referências", que nada mais é a criação de uma transição entre atividades que não são filhas. Quando isso ocorre, a transição criada dita que existe uma correlação de dependência entre duas atividades sem a necessidade delas estarem na mesma subárvore de um workflow.
 
@@ -61,7 +61,7 @@ Caso exista múltiplas transições de atividades pai para uma filha (por meio d
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{imgs/Flux/Transicoes/referencia.png}
-        \caption{Neste exemplo temos as mesmas transições mostradas em \ref{fig:transition_normal}, mas com uma referência da atividade E para a atividade D (demonstrada pela seta pontilhada). A atividade D será disponibilizada quando o usuário executar a atividade B OU quando executar a atividade E.}
+        \caption{Neste exemplo temos as mesmas transições mostradas em~\ref{fig:transition_normal}, mas com uma referência da atividade E para a atividade D (demonstrada pela seta pontilhada). A atividade D será disponibilizada quando o usuário executar a atividade B OU quando executar a atividade E.}
         \label{fig:transition_ref}
     \end{subfigure}
     \caption{Demonstração de transições entre atividades dentro do Flux. Cada atividade é representada por um circulo e cada seta entre círculos representa uma transição.}
@@ -84,7 +84,7 @@ O Flux também permite a criação de grupos de usuários. A criação de grupos
 
 Estes grupos criados facilitam a atribuição de permissões em massa para workflows que serão compartilhados com muitos usuários.
 
-Um usuário pode pertencer a um ou mais grupos como demonstrado na figura \ref{fig:user_edit}.
+Um usuário pode pertencer a um ou mais grupos como demonstrado na figura~\ref{fig:user_edit}.
 
 \begin{figure}
     \centering
@@ -103,7 +103,7 @@ Um usuário pode pertencer a um ou mais grupos como demonstrado na figura \ref{f
 \subsubsection{Sistema de permissões}
 
 O Flux implementa um sistema de permissões completo, com diferentes níveis de permissão para atividades, instâncias e workflows.
-Um usuário administrador do sistema pode gerenciar tais permissões por meio da interface de permissões, que permite a configuração de permissões tanto para usuários individuais quanto para grupos de usuários (demonstrado na figura \ref{fig:permission_interface}).
+Um usuário administrador do sistema pode gerenciar tais permissões por meio da interface de permissões, que permite a configuração de permissões tanto para usuários individuais quanto para grupos de usuários (demonstrado na figura~\ref{fig:permission_interface}).
 
 Existem 5 níveis de permissão no sistema hoje:
 
@@ -115,7 +115,7 @@ Existem 5 níveis de permissão no sistema hoje:
     \item Gerar Relatório: Permite que o usuário imprima um relatório da atividade.
 \end{itemize}
 
-Cada uma dessas permissões podem ser atribuídas separadamente para cada usuário e/ou grupo de usuários, para cada atividade de um workflow (como demonstrado na figura \ref{fig:permission_activity_interface}).
+Cada uma dessas permissões podem ser atribuídas separadamente para cada usuário e/ou grupo de usuários, para cada atividade de um workflow (como demonstrado na figura~\ref{fig:permission_activity_interface}).
 
 Caso um usuário pertença a um grupo de usuários que detêm um conjunto de permissões, este usuário irá receber todas as permissões atribuídas àquele grupo. Com isso, há uma maior facilidade para atribuição de permissões para múltiplos usuários ao mesmo tempo com a criação de grupos diferentes para cada setor da organização, já que pode existir um número grande de atividades no workflow modelado.
 
