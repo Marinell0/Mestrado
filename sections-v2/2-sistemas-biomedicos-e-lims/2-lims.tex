@@ -6,27 +6,25 @@ Laboratory information management system (LIMS), ou sistema laboratorial de mane
 
 % Onde podem ser utilizados
 
-LIMS são utilizados principalmente na área laboratorial \R, mas podem ser utilizados em qualquer sistema que necessita de coleta de dados, automação e integração de pessoas e máquinas para obtenção de resultados consistentes e para manter a segurança de tais dados \R.
+LIMS podem ser utilizados em qualquer sistema que necessita de coleta de dados, automação e integração de pessoas e máquinas para obtenção de resultados consistentes e para manter a segurança de tais dados~\cite{Sun2021LaboratoryEfficiency, TowardsXplore}.
 
-Um dos exemplos deste tipo de cenário é na área de telemedicina, que, com a vinda da pandemia do SarsCov2 no fim de 2019, sofreu um aumento significativo de sua utilização com mais e mais pacientes surgindo e com lockdowns acontecendo, fazendo com que pessoas ficassem em casa e não pudessem fazer visitas médicas presenciais \R.
+Um dos exemplos deste tipo de cenário é na área de telemedicina, que, com a vinda da pandemia do SarsCov2 no fim de 2019, sofreu um aumento significativo de sua utilização com mais e mais pacientes surgindo e com lockdowns acontecendo, fazendo com que pessoas ficassem em casa e não pudessem fazer visitas médicas presenciais~\cite{kronenfeld2021, bakhtiar2020, GatesB.Colbert2020UtilityEra}.
 
-Isso também levou ao grande aumento de dados sendo guardados por sistemas e, nos sistemas antigos presentes em muitos hospitais que ainda utilizam caneta e papel em grandes salas utilizadas apenas para armazenamento de dados de pacientes \R, esta quantidade de dados não poderia ser escalonada para abranger a quantidade requerida nos tempos da pandemia.
+Isso também levou ao grande aumento de dados sendo guardados por sistemas e, nos sistemas antigos presentes em muitos hospitais que ainda utilizam caneta e papel em grandes salas utilizadas apenas para armazenamento de dados de pacientes~\cite{2021TacklingMachine}, esta quantidade de dados não poderia ser escalonada para abranger a quantidade requerida nos tempos da pandemia.
 
 % Exemplos de utilização, tanto em áreas médicas ou laboratoriais
 
-O próprio governo brasileiro expandiu a utilização de softwares no sistema único de saúde (SUS) \R, aumentando o projeto de unificação dos dados de pacientes por todo o país para que todos fossem armazenados em um banco que todos os médicos tivessem acesso para melhoria na eficiência de processos e unificação de hospitais, o  e-SUS, com enfase na "estratégia para reestruturar as informações da Atenção Primária em nível nacional" \R.
+O próprio governo brasileiro expandiu a utilização de softwares no sistema único de saúde (SUS), aumentando o projeto de unificação dos dados de pacientes por todo o país para que todos fossem armazenados em um banco que todos os médicos tivessem acesso para melhoria na eficiência de processos e unificação de hospitais, o  e-SUS, com enfase na "estratégia para reestruturar as informações da Atenção Primária em nível nacional"~\cite{Araujo2021DesafiosCovid-19}.
 
-Para a área laboratorial, temos diversos exemplos de utilização para automação de processos e experimentos, além de aumento no nível de segurança de dados que é necessário para manter dados sigilosos apenas com as pessoas que podem acessá-los. \NO
-
-Existem inúmeras maneiras de se construir um LIMS, sendo uma delas a modelagem dos trabalhos da organização em etapas sequenciais, cada uma com seus próprios requisitos de entrada e saída, seguindo uma estrutura de fluxo de trabalhos (workflows) \R. Cada etapa é atribuída a um indivíduo ou grupo que é responsável por executar a tarefa.
+Para a área laboratorial, temos diversos exemplos de utilização para automação de processos e experimentos, além de aumento no nível de segurança de dados e facilitação no gerenciamento e análise dos mesmos, sendo necessário pela grande quantidade de dados que um laboratório pode gerar com seus experimentos, além do dever de seguir rigorosas regras de regulamentação~\cite{Holzmuller-Laue2014ImprovedAutomation, Holzmuller-Laue2013Model-drivenLaboratories}.
 
 % Quais categorias de pessoas são as melhores para utilizar o software (Manager, developer, médico, paciente...)
 
 É importante que o LIMS esteja integrado com toda a atividade de onde está sendo utilizado para que aumente a eficiência e automação das atividades dentro do ambiente implementado. Isso inclui a utilização pelos funcionários, sendo o LIMS moldado para todo tipo de funcionário na companhia.
 
-Uma das maneiras de estruturar estes fluxos de trabalho é com a utilização de Business Process Management (BPM).
+Existem inúmeras maneiras de se construir um LIMS, sendo uma delas a modelagem dos trabalhos da organização em etapas sequenciais, cada uma com seus próprios requisitos de entrada e saída, seguindo uma estrutura de fluxo de trabalhos, podendo ser modelado com o modelo de Business Process Management (BPM)~\cite{Holzmuller-Laue2014ImprovedAutomation}.
 
-BPM é uma metodologia de modelar trabalhos e processos que gera atividades representando fluxos de trabalho que são necessários para chegar a um objetivo dentro de uma organização \R. Com a modelagem do BPM, chegamos a uma arquitetura de processos que pode ser dividida de maneira a aumentar a eficacia de um grupo de pessoas no trabalho modelado \R.
+BPM é uma metodologia de modelar trabalhos e processos que gera atividades representando fluxos de trabalho que são necessários para chegar a um objetivo dentro de uma organização. Com a modelagem do BPM, chegamos a uma arquitetura de processos que pode ser dividida de maneira a aumentar a eficacia de um grupo de pessoas no trabalho modelado~\cite{Hammer2015WhatManagement}.
 
 % Utilização de BPMs no LIMS
 
