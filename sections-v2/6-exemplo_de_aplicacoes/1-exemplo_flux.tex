@@ -68,15 +68,6 @@ No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente
 
 Segundo o BPMN, é possível que existam múltiplas atividades iniciais para um workflow, contanto que exista uma atividade inicial e uma atividade final para determinado tipo de execução de um BPM.
 
-O Oracle BPM define que é necessário definir um ponto de início e um ponto de fim para um BPM, sendo possível a definição de múltiplos pontos iniciais, mas que cada ponto inicial criado defina uma instância diferente para execução o BPM~\ref{BPMNReference}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{imgs/BPM/Oracle_BPMN.png}
-    \caption{Definição da Oracle sobre o funcionamento de múltiplas atividades iniciais em um processo~\cite{BPMNReference}. Um processo pode ser iniciado de diversas maneira, acarretando em um mesmo processo.}
-    \label{fig:oracle_bpmn}
-\end{figure}
-
 Como um mesmo workflow pode ter troca de informações com alguma parte de outros workflows, foi idealizado uma nova funcionalidade para um workflow no Flux: Múltiplas atividades iniciais que compartilham atividades entre instâncias no meio de sua execução.
 
 Com múltiplas atividades iniciais, é possível agregar diversos workflows que contém um fluxo de trabalho repetido (atividades que seguem o mesmo processo), com a disponibilização de atividades iniciais para usuários que têm permissão para executá-las.
