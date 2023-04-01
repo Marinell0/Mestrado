@@ -111,7 +111,7 @@ Existem dois tipos de compartilhamento: Um compartilhamento geral, onde a ativid
 Nos dois casos, a disponibilização de atividades filhas da atividade compartilhada apenas não ocorre quando existir regras de permissões que não deixem certos usuários (ou grupos de usuários) acessar determinada atividade, caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
 Isso da uma ferramenta poderosa pela combinação do sistema de permissões e compartilhamento de atividades: A requisição de informações e a entrega das mesmas por dois setores diferentes de uma organização.
 
-\subsubsection{Exemplos}
+\subsubsection{Exemplo de pedido de exame}
 
 Vamos utilizar o exemplo de um pedido de exame em um workflow médico e o recebimento deste pedido de exame e execução do mesmo.
 Um médico cria uma instância de paciente, cadastrando-o e seguindo o fluxo de trabalho comum de atendimento.
@@ -135,3 +135,16 @@ Assim, a árvore de atividades, caso o médico tenha permissão de visualizar ap
 \end{figure}
 
 % Workflow grande feito no Flux
+
+\subsection{CTTX e BPL Equipamentos}
+
+Um outro exemplo utiliza os workflows CTTX (Citotoxicidade) e BPL (Boas Práticas de Laboratório) - Equipamentos. Estes dois workflows necessitam de troca de informações entre eles: BPL - Equipamentos precisa informar sobre a calibração de equipamentos para utilização no workflow CTTX.
+
+Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" somente após uma atividade calibração do equipamento (Como podemos ver na figura~\ref{fig:cttx_eqp_structure}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/CTTX-EQP/estrutura_cttx_eqp.png}
+    \caption{Estrutura dos workflows CTTX e BPL-EQP. O workflow original do CTTX pode ser visto com as setas e círculos de cor preta. A seta pontilhada indica a transição antiga do workflow CTTX, sendo as novas transições entre ``Sistema Teste" e ``Calibração", e ``Calibração" e ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" indicam as novas transições feitas para a comunicação da atividade ``Calibração" do workflow BPL com o workflow CTTX. A atividade de Leitura de Absorbância só poderá ser realizada quando um equipamento for calibrado.}
+    \label{fig:cttx_eqp_structure}
+\end{figure}
