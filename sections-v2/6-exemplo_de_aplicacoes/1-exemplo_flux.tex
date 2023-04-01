@@ -55,14 +55,35 @@ Para que isso ocorra, é necessário que a atividade selecionada se torne a ativ
 
 Para isso, pode-se dizer que ocorre um ``giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figura~\ref{fig:primeira_implementacao}.
 
+No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
+
+\subsubsection{Exemplos}
+
+Como exemplo, utilizaremos o workflow modelado para o CENTRARE, que é um fluxo de trabalho para o Centro de Tratamento e Reabilitação de Fissura Labiopalatal e Deformidade Craniofacial do hospital da baleia, em belo horizonte.
+
+Nele, é feito o acompanhamento de pacientes desde o nascimento até a adolescência por múltiplos médicos de diferentes áreas da saúde como odontologia, cirurgia plástica e psicologia. Este fluxo de trabalho é utilizado para o tratamento de lábios leporinos em crianças recém nascidas, com acompanhamento completo pós cirúrgico, familiar e nutricional.
+
+Como este workflow é muito profundo e tem informações de anos acumuladas em um mesmo sistema, ele foi selecionado para a aplicação desta implementação para verificar que as informações ficam mais facilmente disponíveis para os usuários que o utilizam.
+
+Podemos ver a diferença da figura de visualização padrão do fluxo de trabalho (\ref{fig:normalInstance}) e visualização alterada (\ref{fig:changedInstance}). Na primeira imagem, temos uma tabela para seleção de instâncias sem alteração da visualização do workflow. Nela, cada linha na tabela disponibiliza um paciente diferente para seleção.
+
+Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz", disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. Em cada linha é disponibilizado certos atributos para visualização para identificar a atividade desejada para obtenção de informações.
+
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{imgs/Implementacoes/primeiraImplementacao.png}
-    \caption{Representação da implementação de workflows dinâmicas. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade focada apelo usuário. Com isso, a seta em vermelho representa o ``giro" que o workflow faz para que a atividade selecionada vire a primeira atividade do workflow.}
-    \label{fig:primeira_implementacao}
+    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
+    \caption{Workflow padrão do CENTRARE, sendo sua centralização feita na atividade inicial de "Identificação do Paciente"}
+    \label{fig:normalInstance}
 \end{figure}
 
-No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
+    \caption{Workflow com visualização centralizada na atividade "Cirurgia de Nariz, disponibilizando informações da atividade como "Cirurgião", "Aberto ou Fechado" e "Topo de Procedimento" \textbf{Pegar novamente a imagem com todas as informações disponíveis}}
+    \label{fig:changedInstance}
+\end{figure}
+
+Ao acessar o workflow, podemos ver pela figura~\ref{fig:centrare_tree_normal_altered} a alteração da árvore do workflow, disponibilizando as atividades anteriores (em azul) para acesso do usuário, disponibilizando informações de outras atividades caso necessário (como a identificação do paciente) e disponibilizando o acesso mais efetivo de atividades filhas dessa atividade.
 
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 

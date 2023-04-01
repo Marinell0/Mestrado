@@ -7,20 +7,13 @@ O usuário tem a possibilidade de escolher, dentre todas as atividades disponív
 
 A rápida disponibilização de informações ao usuário resulta em uma série de ganhos, incluindo maior eficiência dos trabalhos feitos dentro do LIMS, já que workflows podem ser feitos com essa funcionalidade em mente, menor gasto com treinamento no uso do LIMS, já que uma interface dinâmica pode deixar a navegação mais intuitiva e aumento da produtividade do usuário com as informações disponibilizadas mais rapidamente.
 
-O usuário deve, no entanto, saber onde as informações estão contidas dentro do flux do trabalho existente para selecionar a atividade correta que contém as informações desejadas. Com isso, a interface se altera para que o fluxo de trabalho seja centralizado na atividade que o usuário deseja.
+O usuário deve, no entanto, saber onde as informações estão contidas dentro do fluxo do trabalho existente para selecionar a atividade correta que contém as informações desejadas. Com isso, a interface se altera para que o fluxo de trabalho seja centralizado na atividade que o usuário deseja.
 
-As informações são disponibilizadas como se a atividade centralizada virasse a atividade inicial do workflow, como podemos ver na diferença da figura de visualização padrão do fluxo de trabalho (\ref{fig:normalInstance}) e visualização alterada (\ref{fig:changedInstance}).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
-    \caption{Workflow padrão do CENTRARE, sendo sua centralização feita na atividade inicial de "Identificação do Paciente"}
-    \label{fig:normalInstance}
-\end{figure}
+As informações são disponibilizadas como se a atividade centralizada virasse a atividade inicial do workflow, ocorrendo um ``giro" da atividade selecionada, transformando a atividades pais em atividades filhas da mesma, como podemos ver na figura~\ref{fig:primeira_implementacao}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
-    \caption{Workflow com visualização centralizada na atividade "Cirurgia de Nariz, disponibilizando informações da atividade como "Cirurgião", "Aberto ou Fechado" e "Topo de Procedimento" \textbf{Pegar novamente a imagem com todas as informações disponíveis}}
-    \label{fig:changedInstance}
+    \includegraphics[width=1\textwidth]{imgs/Implementacoes/primeiraImplementacao.png}
+    \caption{Representação da implementação de workflows dinâmicas. Na imagem de cima, podemos ver a implementação original de um workflow genérico que está prestes a ser reconstruído. A atividade em vermelho será utilizada como atividade focada apelo usuário. Com isso, a seta em vermelho representa o ``giro" que o workflow faz para que a atividade selecionada vire a primeira atividade do workflow.}
+    \label{fig:primeira_implementacao}
 \end{figure}
