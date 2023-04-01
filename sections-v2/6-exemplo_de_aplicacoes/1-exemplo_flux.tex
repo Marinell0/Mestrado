@@ -142,6 +142,10 @@ Um outro exemplo utiliza os workflows CTTX (Citotoxicidade) e BPL (Boas Prática
 
 Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" somente após uma atividade calibração do equipamento (Como podemos ver na figura~\ref{fig:cttx_eqp_structure}).
 
+Utilizando o sistema de permissões do Flux, é possível limitar o acesso de cada tipo de usuário (cientista, técnico de laboratório, gerente de laboratório) para que o usuário tenha acesso apenas a informações relevantes ao seu trabalho. Um usuário responsável pela leitura de absorbância terá permissão para visualizar a calibração dos equipamentos utilizados, mas ele não pode realizar nenhuma calibração.
+
+O técnico de laboratório não poderá executar nenhuma leitura de absorbância, e também não terá permissão para visualizar as atividades, enquanto que um gerente de laboratório pode visualizar todas as informações colocadas nos workflows, podendo alterar o tipo de visualização usando a implementação de workflows dinâmicos para obter informações mais rapidamente.
+
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CTTX-EQP/estrutura_cttx_eqp.png}
