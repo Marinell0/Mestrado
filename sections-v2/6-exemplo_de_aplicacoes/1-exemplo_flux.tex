@@ -69,6 +69,8 @@ Podemos ver a diferença da figura de visualização padrão do fluxo de trabalh
 
 Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz", disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. Em cada linha é disponibilizado certos atributos para visualização para identificar a atividade desejada para obtenção de informações.
 
+Existem mais atividades do tipo ``Cirurgia de Nariz" porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, pode ser adicionado um atributo na atividade que recebe como valor o nome do paciente (ou um identificador único), deixando mais rápido para o usuário identificar a qual instância do workflow original aquela atividade pertence. Esse tipo de identificação foi utilizado no workflow CTTX - EQP que será explicado nas próximas seções.
+
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
@@ -152,3 +154,5 @@ O técnico de laboratório não poderá executar nenhuma leitura de absorbância
     \caption{Estrutura dos workflows CTTX e BPL-EQP. O workflow original do CTTX pode ser visto com as setas e círculos de cor preta. A seta pontilhada indica a transição antiga do workflow CTTX, sendo as novas transições entre ``Sistema Teste" e ``Calibração", e ``Calibração" e ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" indicam as novas transições feitas para a comunicação da atividade ``Calibração" do workflow BPL com o workflow CTTX. A atividade de Leitura de Absorbância só poderá ser realizada quando um equipamento for calibrado.}
     \label{fig:cttx_eqp_structure}
 \end{figure}
+
+O equipamento calibrado está identificado por um atributo dentro da atividade de calibração. Este atributo está marcado com um atributo estendido que faz o valor do atributo ser adicionado ao nome da atividade. Caso o equipamento cadastrado tenha o nome de ``Balança Analítica", a atividade de calibração terá o nome ``Calibração (Balança Analítica)", também sendo adicionado a data da calibração para maior facilidade de busca dos dados.
