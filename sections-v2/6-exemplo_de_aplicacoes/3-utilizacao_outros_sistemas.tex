@@ -1,5 +1,9 @@
 \subsection{Possível utilização em outros sistemas}
 
-A troca de ordem dos BPMs pode ser explorada em outros sistemas já que é um conceito generalista de troca de ordem de um BPM. Caso algum LIMS queira implementar este conceito, deve-se implementar múltiplas atividades iniciais com comunicação entre atividades em parte específica do workflow e também implementar a substituição da atividade inicial original por uma selecionada pelo usuário para disponibilização rápida de informações.
+A utilização das funcionalidades citadas neste trabalho necessitam de um LIMS altamente personalizável para que a troca de ordem das atividades o processo de negócios feito. Além disso, deve ser possível modelar um workflow utilizando notação BPM para que seja utilizado a modelagem dentro do sistema.
+
+Para que isso seja implementado de forma correta, o LIMS deve conseguir implementar a reordenação da modelagem de forma a centralizar a visualização atual em uma atividade, disponibilizando todas as outras atividades para manter as informações disponíveis.
+
+O compartilhamento de atividades exige a existência de instâncias para cada execução do modelo criado. Isso ocorre porque o compartilhamento de informações deve ser feito para execuções específicas de um workflow (para uma equipamento específico cadastrado, por exemplo).
 
 % Alterações feitas no BPM para que a feature possa ser utilizada em outros sistemas
