@@ -7,15 +7,15 @@ O problema com o BPL é que existem workflows pequenos (pouco profundos, com pou
 
 Essa dificuldade existe porque, para cada workflow, deve ser acessado uma página diferentes do LIMS, já que cada um desses workflows representa um sistema diferente para cada usuário.
 
-Com a implementação de workflows dinâmicos, é possível acessar as informações de atividades profundas de maneira pontual, a depender das necessidades do usuário, que pode escolher em qual atividade ele quer centralizar a visualização para continuar seus trabalhos.
-
-Caso um gerente queira ver resultados de algum experimento feito por seu funcionário, ele também pode acessar o mesmo workflow e centralizar em uma atividade diferente da que foi centralizada pelo técnico de laboratório, fazendo com que a interface seja dinâmica para cada usuário e os trabalhos sejam mais focados na inserção e coleta de dados no sistema e não na procura dos mesmos.
+Com a implementação de compartilhamento de informações entre workflows, conseguimos utilizar estes workflows junto a workflows diferentes para unirmos as boas práticas de laboratório aos workflows que a utilizam, tendo um maior controle de execução de cada um destes fluxos de trabalho, garantindo que todos estão seguindo as normas de BPL, como é o caso do CTTX.
 
 % Para que esta ferramenta fosse mais poderosa, também foi implementado a funcionalidade de múltiplas atividades iniciais no workflow do BPL, fazendo com que workflows dinâmicos pudessem ser centralizados em qualquer atividade que estivesse compartilhada entre instâncias, agregando informações necessárias para execução de um BPM, como calibração de um equipamento de análise de substâncias.
 
 \subsubsection{CTTX e BPL - Equipamentos}
 
-O workflow mencionado anteriormente, compartilhando a atividade de calibração entre os workflows CTTX e BPL - Equipamentos foi implementado no Flux para uso laboratorial, adaptando os dois workflows para que houvesse a comunicação entre as equipes que trabalham no laboratório.
+O workflow de Citotoxicidade (CTTX) utiliza o workflow \textit{BPL - Equipamentos} para garantir que equipamentos estejam calibrados e funcionais. Uma atividade deste workflow só deve ser executada quando as calibrações dos equipamentos utilizados estiverem em dia.
+
+Para isso, foi compartilhada a atividade de calibração do workflow \textit{BPL - Equipamentos} com o workflow \textit{CTTX}, implementando este fluxo de trabalho no Flux, adaptando o workflow para que atividades do workflow CTTX apenas estivessem disponíveis para execução após uma calibração.
 
 A estrutura dentro do Flux fica demonstrada pela figura~\ref{fig:cttx_bpl_flux}, que pode ser acessada dentro do próprio software. Na figura, podemos ver referência à atividade ``Calibração" nos dois fluxos de trabalho. Para separar quais atividades ficam disponíveis para cada usuário do sistema, é necessário utilizar o sistema de permissões já implementado no Flux para especificar permissões de visualização, execução e aprovação da atividade.
 
