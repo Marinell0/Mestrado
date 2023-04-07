@@ -18,21 +18,7 @@ Se a estrutura do BPM mudar de uma maneira a disponibilizar atividades antes de 
 
 Para selecionar qual atividade inicial será utilizada na visualização atual, foi alterada a interface para adicionar um seletor de atividades, disponibilizando todas as atividades que o usuário tem permissão de acessar em uma lista ordenada pelo nome da mesma. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
-Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão (Como podemos ver na figura~\ref{fig:centrare_seletor_normal}). Quando o usuário seleciona uma atividade para ser focada, temos a alteração da interface para mostrar, como instância, todas as atividades executadas da atividade que o usuário selecionou no seletor (Como podemos ver na figura~\ref{fig:centrare_seletor_alterado}).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Selecione uma atividade'', indicando que ele não foi alterado e a atividade que está sendo mostrada é atividade inicial original deste workflow.}
-    \label{fig:centrare_seletor_normal}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Cirurgia de Nariz'', indicando que o usuário selecionou a atividade com este nome para ser focada e utilizada como atividade inicial. Como podemos ver pela tabela, temos todas as atividades ``Cirurgia de nariz'' representadas como instâncias do workflow.}
-    \label{fig:centrare_seletor_alterado}
-\end{figure}
+Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada será a padrão, deixando o workflow na visualização padrão. Exemplos para esta funcionalidade são mostrados na seção~\ref{sec:dinamic_workflows_examples}.
 
 A árvore de atividades também teve de ser alterada, com a criação de novos tipos de atividades: Atividades pai, ou atividades anteriores. Neste tipo de atividade (Identificados pela cor azul na figura~\ref{fig:centrare_tree_normal_altered}), não é possível executar novas atividades, sendo existentes apenas por motivos de disponibilização de informações pertinentes à execução atual.
 
@@ -57,7 +43,7 @@ Para isso, pode-se dizer que ocorre um ``giro'' na árvore de atividades para a 
 
 No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
 
-\subsubsection{Exemplos}
+\subsubsection{Exemplos} \label{sec:dinamic_workflows_examples}
 
 Como exemplo, utilizaremos o workflow modelado para o CENTRARE, que é um fluxo de trabalho para o Centro de Tratamento e Reabilitação de Fissura Labiopalatal e Deformidade Craniofacial do hospital da baleia, em belo horizonte.
 
