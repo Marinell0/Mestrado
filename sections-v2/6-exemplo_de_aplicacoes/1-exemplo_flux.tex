@@ -23,14 +23,14 @@ Caso o usuário não selecione nenhuma atividade, a atividade inicial utilizada 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Selecione uma atividade", indicando que ele não foi alterado e a atividade que está sendo mostrada é atividade inicial original deste workflow.}
+    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Selecione uma atividade'', indicando que ele não foi alterado e a atividade que está sendo mostrada é atividade inicial original deste workflow.}
     \label{fig:centrare_seletor_normal}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
-    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Cirurgia de Nariz", indicando que o usuário selecionou a atividade com este nome para ser focada e utilizada como atividade inicial. Como podemos ver pela tabela, temos todas as atividades ``Cirurgia de nariz" representadas como instâncias do workflow.}
+    \caption{Nesta imagem podemos ver o workflow CENTRARE e o seletor de atividade inicial na parte superior da imagem. O seletor contém o escrito ``Cirurgia de Nariz'', indicando que o usuário selecionou a atividade com este nome para ser focada e utilizada como atividade inicial. Como podemos ver pela tabela, temos todas as atividades ``Cirurgia de nariz'' representadas como instâncias do workflow.}
     \label{fig:centrare_seletor_alterado}
 \end{figure}
 
@@ -38,7 +38,7 @@ A árvore de atividades também teve de ser alterada, com a criação de novos t
 
 Foi necessário a criação deste novo tipo de atividade para disponibilizar informações de atividades anteriores para o usuário, já que as informações podem ser pertinentes para o usuário.
 
-Na mesma figura~\ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada ``Cirurgia de Nariz".
+Na mesma figura~\ref{fig:centrare_tree_normal_altered} temos as informações do paciente como primeira atividade da visualização original, podendo ser necessária para preenchimento de próximas atividades da atividade selecionada ``Cirurgia de Nariz''.
 
 \begin{figure}
     \centering
@@ -53,7 +53,7 @@ Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a
 
 Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente.
 
-Para isso, pode-se dizer que ocorre um ``giro" na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figura~\ref{fig:primeira_implementacao}.
+Para isso, pode-se dizer que ocorre um ``giro'' na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figura~\ref{fig:primeira_implementacao}.
 
 No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
 
@@ -67,23 +67,23 @@ Como este workflow é muito profundo e tem informações de anos acumuladas em u
 
 Podemos ver a diferença da figura de visualização padrão do fluxo de trabalho (\ref{fig:normalInstance}) e visualização alterada (\ref{fig:changedInstance}). Na primeira imagem, temos uma tabela para seleção de instâncias sem alteração da visualização do workflow. Nela, cada linha na tabela disponibiliza um paciente diferente para seleção.
 
-Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz", disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. Em cada linha é disponibilizado certos atributos para visualização para identificar a atividade desejada para obtenção de informações.
+Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz'', disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. Em cada linha é disponibilizado certos atributos para visualização para identificar a atividade desejada para obtenção de informações.
 
-Existem mais atividades do tipo ``Cirurgia de Nariz" porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, pode ser adicionado um atributo na atividade que recebe como valor o nome do paciente (ou um identificador único), deixando mais rápido para o usuário identificar a qual instância do workflow original aquela atividade pertence. Esse tipo de identificação foi utilizado no workflow CTTX - EQP que será explicado nas próximas seções.
+Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, pode ser adicionado um atributo na atividade que recebe como valor o nome do paciente (ou um identificador único), deixando mais rápido para o usuário identificar a qual instância do workflow original aquela atividade pertence. Esse tipo de identificação foi utilizado no workflow CTTX - EQP que será explicado nas próximas seções.
 
 Mesmo se não for especificado um atributo para identificação da instância original, o Flux automaticamente adiciona a data de execução da atividade como atributo para que ela seja identificada com facilidade para execução, sem a necessidade de um identificador específico.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
-    \caption{Workflow padrão do CENTRARE, sendo sua centralização feita na atividade inicial de "Identificação do Paciente"}
+    \caption{Workflow padrão do CENTRARE, sendo sua centralização feita na atividade inicial de ``Identificação do Paciente''}
     \label{fig:normalInstance}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaAlterada.png}
-    \caption{Workflow com visualização centralizada na atividade "Cirurgia de Nariz, disponibilizando informações da atividade como "Cirurgião", "Aberto ou Fechado" e "Topo de Procedimento"}
+    \caption{Workflow com visualização centralizada na atividade ``Cirurgia de Nariz, disponibilizando informações da atividade como ``Cirurgião'', ``Aberto ou Fechado'' e ``Topo de Procedimento''}
     \label{fig:changedInstance}
 \end{figure}
 
@@ -144,7 +144,7 @@ Assim, a árvore de atividades, caso o médico tenha permissão de visualizar ap
 
 Um outro exemplo utiliza os workflows CTTX (Citotoxicidade) e BPL (Boas Práticas de Laboratório) - Equipamentos. Estes dois workflows necessitam de troca de informações entre eles: BPL - Equipamentos precisa informar sobre a calibração de equipamentos para utilização no workflow CTTX.
 
-Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" somente após uma atividade calibração do equipamento (Como podemos ver na figura~\ref{fig:cttx_eqp_structure}).
+Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)'' somente após uma atividade calibração do equipamento (Como podemos ver na figura~\ref{fig:cttx_eqp_structure}).
 
 Utilizando o sistema de permissões do Flux, é possível limitar o acesso de cada tipo de usuário (cientista, técnico de laboratório, gerente de laboratório) para que o usuário tenha acesso apenas a informações relevantes ao seu trabalho. Um usuário responsável pela leitura de absorbância terá permissão para visualizar a calibração dos equipamentos utilizados, mas ele não pode realizar nenhuma calibração.
 
@@ -153,8 +153,8 @@ O técnico de laboratório não poderá executar nenhuma leitura de absorbância
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CTTX-EQP/estrutura_cttx_eqp.png}
-    \caption{Estrutura dos workflows CTTX e BPL-EQP. O workflow original do CTTX pode ser visto com as setas e círculos de cor preta. A seta pontilhada indica a transição antiga do workflow CTTX, sendo as novas transições entre ``Sistema Teste" e ``Calibração", e ``Calibração" e ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)" indicam as novas transições feitas para a comunicação da atividade ``Calibração" do workflow BPL com o workflow CTTX. A atividade de Leitura de Absorbância só poderá ser realizada quando um equipamento for calibrado.}
+    \caption{Estrutura dos workflows CTTX e BPL-EQP. O workflow original do CTTX pode ser visto com as setas e círculos de cor preta. A seta pontilhada indica a transição antiga do workflow CTTX, sendo as novas transições entre ``Sistema Teste'' e ``Calibração'', e ``Calibração'' e ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)'' indicam as novas transições feitas para a comunicação da atividade ``Calibração'' do workflow BPL com o workflow CTTX. A atividade de Leitura de Absorbância só poderá ser realizada quando um equipamento for calibrado.}
     \label{fig:cttx_eqp_structure}
 \end{figure}
 
-O equipamento calibrado está identificado por um atributo dentro da atividade de calibração. Este atributo está marcado com um atributo estendido que faz o valor do atributo ser adicionado ao nome da atividade. Caso o equipamento cadastrado tenha o nome de ``Balança Analítica", a atividade de calibração terá o nome ``Calibração (Balança Analítica)", também sendo adicionado a data da calibração para maior facilidade de busca dos dados.
+O equipamento calibrado está identificado por um atributo dentro da atividade de calibração. Este atributo está marcado com um atributo estendido que faz o valor do atributo ser adicionado ao nome da atividade. Caso o equipamento cadastrado tenha o nome de ``Balança Analítica'', a atividade de calibração terá o nome ``Calibração (Balança Analítica)'', também sendo adicionado a data da calibração para maior facilidade de busca dos dados.
