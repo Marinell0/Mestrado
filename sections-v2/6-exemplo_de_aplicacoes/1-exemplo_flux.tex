@@ -76,6 +76,10 @@ Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelag
 
 Ao acessar o workflow, podemos ver pela figura~\ref{fig:centrare_tree_normal_altered} a alteração da árvore do workflow, disponibilizando as atividades anteriores (em azul) para acesso do usuário, disponibilizando informações de outras atividades caso necessário (como a identificação do paciente) e disponibilizando o acesso mais efetivo de atividades filhas dessa atividade.
 
+Esta funcionalidade acelera o acesso à atividades profundas (como a ``Cirurgia de Nariz'' citada) já que a atividade e seus atributos ficam disponíveis na tabela de seleção de instâncias para que possam ser visualizadas, facilitando a seleção pelo usuário.
+
+No caso de um gerente que quer saber quantas cirurgias foram feitas, selecionar a atividade disponibiliza todas as executadas para o usuário, acelerando a coleta de informações. Além disso, caso ele queira selecionar apenas cirurgias de um certo tipo, pode apenas filtrar pelo atributo de Tipo de cirurgia disponível na tabela de seleção de instâncias, facilitando a seleção da atividade buscada.
+
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 
 Enquanto a BPMN permite múltiplas maneiras de iniciar um processo, ela permite apenas uma atividade inicial em um diagrama de processo, representado por um único evento de início.
