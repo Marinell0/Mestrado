@@ -8,13 +8,9 @@ Como estes recursos alteram como a visualização de um BPM ocorre, foram necess
 
 Para que o Flux pudesse focar em uma atividade dentro do workflow, alteramos a definição de instância do programa. Anteriormente, instâncias eram definidas como o inicio do fluxo de trabalho do usuário para execução do BPM.
 
-Com a implementação de workflows dinâmicos, foi necessário a utilização de instâncias como o ponto de partida de execução do usuário naquele momento, e não necessariamente o inicio do fluxo de trabalho. Instancias ainda podem ser utilizadas seguindo a definição anterior caso o usuário não selecione nenhuma atividade para ser focada (Ou selecione a atividade inicial original).
+Com a implementação de workflows dinâmicos, foi necessário a utilização de instâncias como o ponto de partida de execução do usuário naquele momento, e não necessariamente o inicio do fluxo de trabalho. As instâncias agora demonstram, como ponto inicial, a atividade focada pelo usuário.
 
-No software, instâncias ainda são criadas apenas para a atividade original, mas de maneira oculta, para disponibilizar as informações para o usuário de maneira conveniente, é criado uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
-
-É importante que estas instâncias auxiliares não sejam salvas para que não haja duplicação de dados do workflow e para não ocorrer alterações no BPM original. A ordem das atividades sempre deve seguir a estrutura original do BPM para manter o fluxo desejado quando ele foi modelado.
-
-Se a estrutura do BPM mudar de uma maneira a disponibilizar atividades antes de uma dependência, isso pode causar um fluxo de trabalho errôneo que não segue as restrições modeladas quando o workflow foi implementado no sistema, e isso não pode ocorrer para que o BPM ainda esteja em conformidade com as diretrizes do laboratório.
+No software, instâncias ainda são criadas apenas para a atividade original, mantendo a ordenação do BPM, mas a disponibilização de informações é feita de maneira dinâmica, criando uma instância temporária onde a atividade inicial é a atividade selecionada pelo usuário, disponibilizando esta atividade centralizada como ponto de partida para sua execução.
 
 Para selecionar qual atividade inicial será utilizada na visualização atual, foi alterada a interface para adicionar um seletor de atividades, disponibilizando todas as atividades que o usuário tem permissão de acessar em uma lista ordenada pelo nome da mesma. Nele, temos o nome de todas as atividades do workflow selecionado que o usuário tem a permissão de visualizar.
 
