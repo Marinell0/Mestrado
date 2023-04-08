@@ -94,9 +94,13 @@ Para compartilhar atividades entre múltiplos workflows, é necessário que este
 Para isso, foi alterado o editor de workflows já existente no Flux para que fosse possível criar múltiplas atividades iniciais, uma atividade inicial para cada workflow agregado.
 Os workflows não precisam ter atividades compartilhadas para estarem juntos, eles funcionarão como workflows normais, com criação de instâncias e atividades da mesma maneira, apenas estando sob o mesmo nome de workflow e dentro da mesma interface que disponibiliza as informações de um workflow, disponibilizando recursos como busca de informações e geração de relatório dentro do mesmo workflow.
 
-Quando for existir uma atividade compartilhada entre workflows, é necessário criar o fluxo de trabalho em um workflow, gerando todas as características necessárias para modelagem daquele processo. Logo após a criação das atividades, é necessário criar uma transição de referência entre a atividade que será pai da atividade compartilhada em um workflow e a atividade compartilhada já criada no segundo workflow.
+Quando uma atividade deve ser compartilhada entre workflows, é necessário cria-la como filha de uma das atividades que a utilizarão. Logo após a criação da atividade, é necessário criar transições entre todas as atividades pai para que tenham a atividade compartilhada disponível para execução (figura~\ref{fig:transition_ref}).
 
 Existem dois tipos de compartilhamento: Um compartilhamento geral, onde a atividade será compartilhada entre todas as instâncias existentes assim que ela for criada e um compartilhamento seletivo, onde o usuário escolhe qual instância receberá as informações da atividade executada.
+
+No caso do compartilhamento geral, ele é necessário pois atividades podem ser executadas antes de uma instância existir, como por exemplo no workflow de Citotoxicidade (CTTX): Um equipamento pode existir antes de um ensaio de citotoxicidade ser executado.
+
+Para o compartilhamento seletivo, ele é necessário pois em um pedido de exame, o envio do exame deve ser feito para um laboratório específico e não pode aparecer para outros laboratórios, sendo necessário a seleção de qual laboratório receberá o compartilhamento da atividade.
 
 Nos dois casos, a disponibilização de atividades filhas da atividade compartilhada apenas não ocorre quando existir regras de permissões que não deixem certos usuários (ou grupos de usuários) acessar determinada atividade, caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
 Isso da uma ferramenta poderosa pela combinação do sistema de permissões e compartilhamento de atividades: A requisição de informações e a entrega das mesmas por dois setores diferentes de uma organização.
