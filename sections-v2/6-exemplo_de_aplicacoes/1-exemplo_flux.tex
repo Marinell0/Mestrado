@@ -83,7 +83,9 @@ Como uma organização pode ter múltiplas equipes trabalhando em focos diferent
 
 Como um mesmo workflow pode ter troca de informações com alguma parte de outros workflows, foi idealizado uma nova funcionalidade para um workflow no Flux: Múltiplas atividades iniciais que compartilham atividades entre instâncias no meio de sua execução.
 
-Com múltiplas atividades iniciais, é possível agregar diversos workflows que contém um fluxo de trabalho repetido (atividades que seguem o mesmo processo), com a disponibilização de atividades iniciais para usuários que têm permissão para executá-las.
+Cada possível atividade inicial do workflow pode ser utilizada para criar uma instância diferente do workflow, já que cada uma dessas atividades representa um tipo de execução diferente do workflow (na figura~\ref{fig:segunda_implementacao}, uma atividade inicial é para cadastro de pacientes e a outra para cadastro de técnicos de laboratório).
+
+Com um workflow com múltiplas atividades iniciais, é possível ter atividades que, ao serem executadas, serão disponibilizadas para outros usuários que utilizam este workflow, independente da instância que estiverem executando. Assim, usuários que estão executando atividades em uma parte do workflow (partindo de uma atividade inicial) compartilham informações com outros usuários (partindo de outra atividade inicial).
 
 Com a execução de dois workflows agregados, cada execução iniciando de uma atividade inicial diferente, é possível o compartilhamento das atividades que contém um processo idêntico entre os dois workflows agregados, disponibilizando as informações para as instâncias selecionadas.
 
