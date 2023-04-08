@@ -57,8 +57,6 @@ Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz'', disponibil
 
 Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, pode ser adicionado um atributo na atividade que recebe como valor o nome do paciente (ou um identificador único), deixando mais rápido para o usuário identificar a qual instância do workflow original aquela atividade pertence. Esse tipo de identificação foi utilizado no workflow CTTX - EQP que será explicado nas próximas seções.
 
-Mesmo se não for especificado um atributo para identificação da instância original, o Flux automaticamente adiciona a data de execução da atividade como atributo para que ela seja identificada com facilidade para execução, sem a necessidade de um identificador específico.
-
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/CENTRARE/instanciaNormal.png}
