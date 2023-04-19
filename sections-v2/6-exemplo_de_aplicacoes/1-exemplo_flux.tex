@@ -111,8 +111,9 @@ No caso do compartilhamento geral, ele é necessário pois atividades podem ser 
 
 Para o compartilhamento seletivo, ele é necessário porque em um pedido de exame, o envio do exame deve ser feito para um laboratório específico e não pode aparecer para outros laboratórios, sendo necessário a seleção de qual laboratório receberá o compartilhamento da atividade.
 
-Nos dois casos, a disponibilização de atividades filhas da atividade compartilhada apenas não ocorre quando existir regras de permissões que não deixem certos usuários (ou grupos de usuários) acessar determinada atividade, caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
-Isso da uma ferramenta poderosa pela combinação do sistema de permissões e compartilhamento de atividades: A requisição de informações e a entrega das mesmas por dois setores diferentes de uma organização.
+Nos dois casos, o compartilhamento de atividades tem uma ligação forte com o sistema de permissões. A disponibilização de atividades filhas da atividade compartilhada deve ser controlado pelos administradores do workflow, alterando as permissões de visualização das atividades. Caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
+
+Com isso, é possível montar o workflow de forma a disponibilizar a requisição de dados entre usuários. Cada usuário fica responsável pela execução de uma atividade específica do workflow, executando atividades que estes usuários tenham permissão para executar. Quando um usuário não tem permissão para executar uma atividade e outro usuário tem, atividades filhas só ficam disponíveis após o usuário com permissão executar a atividade, permitindo a troca de informações entre os usuários. A colaboração é essencial para a execução do workflow.
 
 \subsubsection{Exemplo de pedido de exame}
 
