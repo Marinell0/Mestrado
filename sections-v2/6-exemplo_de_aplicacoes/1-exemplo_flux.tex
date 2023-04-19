@@ -107,7 +107,7 @@ Quando uma atividade deve ser compartilhada entre workflows, é necessário cria
 
 Existem dois tipos de compartilhamento: Um compartilhamento geral, onde a atividade será compartilhada entre todas as instâncias existentes assim que ela for criada e um compartilhamento seletivo, onde o usuário escolhe qual instância receberá as informações da atividade executada.
 
-No caso do compartilhamento geral, ele é necessário pois atividades podem ser executadas antes de uma instância existir, como por exemplo no workflow de Citotoxicidade (CTTX): Um equipamento pode existir antes de um ensaio de citotoxicidade ser executado.
+Uma atividade deve ser compartilhada com todas as instâncias quando o usuário deve executar atividades a partir de uma atividade executada de outra instância. O usuário que executou a atividade não escolhe para qual instância ela será compartilhada. No caso do do workflow de Citotoxicidade (CTTX), quando o workflow BPL - Equipamentos é utilizado pra compartilhar a atividade de calibração de equipamento, um equipamento pode existir e calibrações podem ser feitas antes de um ensaio de citotoxicidade existir. Quando um ensaio de citotoxicidade for ser executado, o usuário poderá escolher entre todas as calibrações executadas.
 
 Para o compartilhamento seletivo, ele é necessário porque em um pedido de exame, o envio do exame deve ser feito para um laboratório específico e não pode aparecer para outros laboratórios, sendo necessário a seleção de qual laboratório receberá o compartilhamento da atividade.
 
