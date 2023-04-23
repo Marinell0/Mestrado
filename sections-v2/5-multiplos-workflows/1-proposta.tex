@@ -14,7 +14,28 @@ A utilização de múltiplos inícios para BPMs facilita o compartilhamento de p
 
 O compartilhamento de atividades permite que os usuários trabalhem juntos de forma mais colaborativa. Quando um usuário executa uma atividade que é compartilhada com outros BPMs, esta atividade e as informações entradas na execução são disponibilizadas para os usuários que tenham permissão, fornecendo informações sobre o trabalho realizado e permitindo que continuem a trabalhar de forma eficiente.
 
-Após a execução desta atividade compartilhada, outros usuários podem continuar o seu próprio fluxo de trabalho, não necessariamente disponibilizando este fluxo para a pessoa que executou a atividade em si. Isso é possível com a utilização de um sistema de permissões implementado no LIMS.
+Após a execução desta atividade compartilhada, outros usuários podem continuar o seu próprio fluxo de trabalho, não necessariamente disponibilizando este fluxo para a pessoa que executou a atividade em si. Isso é possível com a utilização de um sistema de permissões implementado no LIMS. Um exemplo deste tipo de colaboração pode ser visto na figura~\ref{fig:arvore_medico_tecnico}.
+
+\begin{figure}
+    \centering
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{imgs/Exemplo-Mestrado/arvore_medico.png}
+        \caption{Visualização do workflow pela visão do médico, que não ter permissão de visualizar atividades de execução do pedido de exame.}
+        \label{fig:arvore_medico}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{imgs/Exemplo-Mestrado/arvore_tecnico.png}
+        \caption{Visualização do workflow pela visão do técnico de laboratório, que executa as atividades do pedido de exame e executa também o resultado do pedido, disponibilizando para a visualização do médico.}
+        \label{fig:arvore_tecnico}
+    \end{subfigure}
+    \caption{Demonstração de transições entre atividades dentro do Flux. Cada atividade é representada por um circulo e cada seta entre círculos representa uma transição.}
+    \label{fig:arvore_medico_tecnico}
+
+\end{figure}
 
 Um exemplo disso é em um pedido de exame de sangue de um médico para um laboratório, que irá examinar a amostra e dar um resultado ao médico. Este médico só poderá continuar o processo de atendimento quando o técnico de laboratório tiver terminado de realizar todas as análises da amostra e executando uma atividade de resultado de análise, que o médico tem acesso, tendo assim a troca de informações entre médico e técnico de laboratório e melhorando a integração entre os dois processos.
 
