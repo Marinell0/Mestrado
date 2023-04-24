@@ -76,9 +76,11 @@ Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelag
 
 Ao acessar o workflow, podemos ver pela figura~\ref{fig:centrare_tree_normal_altered} a alteração da árvore do workflow, disponibilizando as atividades anteriores (em azul) para acesso do usuário, disponibilizando informações de outras atividades caso necessário (como a identificação do paciente) e disponibilizando o acesso mais efetivo de atividades filhas dessa atividade.
 
-Esta funcionalidade acelera o acesso à atividades profundas (como a ``Cirurgia de Nariz'' citada) já que a atividade e seus atributos ficam disponíveis na tabela de seleção de instâncias para que possam ser visualizadas, facilitando a seleção pelo usuário.
+Esta funcionalidade acelera o acesso à atividades profundas (como a ``Cirurgia de Nariz'' citada) já que a atividade e seus atributos ficam disponíveis na tabela de seleção de instâncias para que possam ser visualizadas, facilitando a seleção pelo usuário. Isso ajuda o médico a encontrar as atividades de ``Cirurgia de Nariz'', que é o foco atual do usuário ao utilizar o LIMS, sem ter que acessar todos os pacientes para procurar a atividade correta, já que o identificador das instâncias ficam disponíveis para que o usuário selecione a atividade correta (no caso do CENTRARE, o identificador é o número de protocolo com o nome do paciente).
 
-No caso de um gerente que quer saber quantas cirurgias foram feitas, selecionar a atividade disponibiliza todas as executadas para o usuário, acelerando a coleta de informações. Além disso, caso ele queira selecionar apenas cirurgias de um certo tipo, pode apenas filtrar pelo atributo de Tipo de cirurgia disponível na tabela de seleção de instâncias, facilitando a seleção da atividade buscada.
+Com essa facilidade, o médico pode acessar a atividade com apenas um clique, tendo todas os atributos necessários para descobrir que atividade ele quer acessar e fazer alterações. Isso diminui o número de telas que o usuário irá acessar, já fornecendo diretamente a informação que ele está procurando.
+
+Este recurso também ajuda o gerente que quer saber quantas cirurgias foram feitas, selecionar a atividade disponibiliza todas as executadas para o usuário, acelerando a coleta de informações. Além disso, caso ele queira selecionar apenas cirurgias de um certo tipo, pode apenas filtrar pelo atributo de Tipo de cirurgia disponível na tabela de seleção de instâncias, facilitando a seleção da atividade buscada.
 
 \subsection{Alterações feitas para múltiplas atividades iniciais}
 
