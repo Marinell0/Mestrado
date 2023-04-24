@@ -2,8 +2,15 @@
 
 Para solucionar o problema da falta de comunicação entre diferentes BPMs com atividades compartilhadas, foi idealizada uma funcionalidade para integrar múltiplos BPMs com atividades que se repetem com a criação de um grande BPM agregado com múltiplas atividades iniciais.
 
-Cada atividade inicial representa o início de um BPM, podendo existir uma ou mais atividades iniciais.
-Como cada atividade inicial ainda representa uma instância daquele BPM, as informações de atividades compartilhadas entre BPMs são compartilhadas entre instâncias destes BPMs, podendo ou não ser compartilhadas com instâncias específicas de outros workflows.
+Cada atividade inicial representa o início de um BPM, podendo existir uma ou mais atividades iniciais (como na figura~\ref{fig:bpl_completo}).
+Como cada atividade inicial ainda representa uma instância daquele BPM, as informações de atividades compartilhadas entre BPMs são compartilhadas entre instâncias destes BPMs.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/BPL/bpl_completo.png}
+    \caption{Estrutura de workflows BPL todos em um mesmo diagrama. Neste caso, cada atividade inicial (em vermelho) pode ser iniciada como uma instância no Flux.}
+    \label{fig:bpl_completo}
+\end{figure}
 
 Um usuário (Ou múltiplos) criam instâncias dos BPMs compartilhados e, ao executar uma atividade compartilhada, podem escolher com quais instâncias irá compartilhar as informações contidas no mesmo.
 Como exemplo, se tivermos a execução de uma atividade de pedido de exame, e existam instâncias de laboratórios de análise de amostras que compartilham da mesma atividade, o médico (usuário executando a atividade de pedido de exame) pode escolher para qual instância de laboratório essa atividade será compartilhada.
