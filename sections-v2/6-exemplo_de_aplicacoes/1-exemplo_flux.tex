@@ -8,7 +8,28 @@ Como estes recursos alteram a visualização de um BPM, foram necessário ajuste
 
 Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a árvore de atividades é reajustada para que a atividade selecionada seja o foco principal da instância.
 
-Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente (Figura ).
+Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente (Figura~\ref{arvore_centrare_flux}).
+
+\begin{figure}
+    \centering
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{imgs/CENTRARE/centrare-original-flux.png}
+        \caption{Árvore do workflow CENTRARE original, com a atividade ``Cirurgia de Nariz'' selecionada.}
+        \label{fig:arvore_centrare_original_flux}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{imgs/CENTRARE/centrare-altered-flux.png}
+        \caption{Árvore do workflow CENTRARE alterada, com a atividade ``Cirurgia de Nariz'' centralizada e selecionada.}
+        \label{fig:arvore_centrare_altered_flux}
+    \end{subfigure}
+    \caption{Imagens demonstrando a centralização de atividades. Na figura \textbf{a}, demonstra a atividade não centralizada. Na figura \textbf{b}, demonstra a atividade centralizada, se tornando pai das atividades anteriores a ela (em azul).}
+    \label{fig:arvore_centrare_flux}
+
+\end{figure}
 
 Para isso, pode-se dizer que ocorre um ``giro'' na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figura~\ref{fig:primeira_implementacao}.
 
