@@ -13,7 +13,7 @@ Um conjunto de atividades formam um workflow modelado dentro do software. Esse c
 Para isso, o Flux utiliza de instâncias, que nada mais é que uma separação entre as diferentes execuções de um workflow. Cada instância é criada quando executamos a primeira atividade do workflow selecionado, definindo o início de um novo processo a ser executado. Um workflow pode ter uma ou mais instâncias, sendo a execução delas o ponto principal do Flux.
 Cada workflow pode ser criado através do editor de workflows que existe dentro do próprio Flux, onde podem ser construídos e editados para seguirem um BPM modelado para a organização que irá utilizá-lo.
 
-O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar uma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído (Veja o exemplo do workflow CENTRARE na figura~\ref{fig:editor_centrare}).
+O editor de workflows funciona de maneira intuitiva para o usuário, sem a necessidade de utilizar uma linguagem de programação, apenas arrastar atributos para atividades criadas e criar atividades seguindo um modelo construído. Na figura~\ref{fig:editor_centrare} representando o workflow CENTRARE no editor de workflows, podemos ver a árvore de atividades no canto esquerdo da tela, bem como os atributos da atividade na tabela ``Atividade nova'' e atributos disponíveis para serem adicionados na atividade na tabela ``Atributos disponíveis''.
 
 Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execução da atividade pai para que elas possam ser executadas, ou podem ser irmãs de outras atividades, que significa que a sua execução não interfere na execução da atividade irmã, mas que as duas só ficam disponíveis quando a atividade pai for executada (Figura~\ref{fig:estrutura_workflow}).
 
@@ -27,7 +27,7 @@ Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execu�
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{imgs/Flux/Workflows/Editor/editor_centrare.png}
-    \caption{Visualização da primeira atividade do workflow CENTRARE e seus atributos no editor de workflows do LIMS Flux. Podemos ver a árvore de atividades no canto esquerdo da tela, bem como os atributos da atividade na tabela ``Atividade nova'' e atributos disponíveis para serem adicionados na atividade na tabela ``Atributos disponíveis''.}
+    \caption{Visualização da primeira atividade do workflow CENTRARE e seus atributos no editor de workflows do LIMS Flux.}
     \label{fig:editor_centrare}
 \end{figure}
 
