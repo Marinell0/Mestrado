@@ -35,9 +35,9 @@ Atividades podem ser filhas de outra atividade, ou seja, elas dependem da execu�
 
 No Flux existe o conceito de transições. Uma transição define uma relação de dependência entre duas atividades. Para que exista uma atividade B filha de A, deve-se existir uma transição entre elas. Cada transição demonstra uma relação de dependência entre as atividades filha e as atividades pai (como visto na figura~\ref{fig:transitions})
 
-Também ocorre a existência de transições entre atividades que não são pais e filhas, que nada mais é a criação de uma transição entre elas. Quando isso ocorre, a transição criada dita que existe uma correlação de dependência entre duas atividades sem a necessidade delas estarem na mesma subárvore de um workflow.
+Também ocorre a existência de transições entre atividades que não são pais e filhas, que nada mais é a criação de uma transição entre elas. Quando isso ocorre, a transição dita uma correlação de dependência entre duas atividades sem a necessidade delas estarem na mesma subárvore de um workflow.
 
-Caso exista múltiplas transições de atividades pai para uma filha (por meio deste tipo de transições), a atividade será disponibilizada na execução de qualquer uma das atividades pai da mesma.
+Uma transição entre duas atividades demonstra uma relação de dependência entre essas atividades, sendo necessário a execução de uma (atividade pai) para que a outra atividade (filha) possa ser executada. Caso existam múltiplas transições de atividades pai para uma filha (por meio deste tipo de transições), a atividade será disponibilizada na execução de qualquer uma das atividades pai da mesma.
 
 \begin{figure}
     \centering
