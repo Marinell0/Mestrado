@@ -1,24 +1,24 @@
 \subsection{Workflows dinâmicos no Flux}
 
-O LIMS Flux foi utilizado para implementação dos recursos de workflows dinâmicos e da agregação de múltiplos BPMs para troca de informações entre eles. Sua utilização foi feita pela facilidade na criação de workflows dentro do próprio software e a alta personalização disponibilizada.
+O LIMS Flux foi utilizado para implementação dos recursos de workflows dinâmicos e da agregação de múltiplos BPMs para troca de informações. Sua utilização foi feita pela facilidade na criação de workflows dentro do próprio software e a alta personalização disponibilizada.
 
-Como estes recursos alteram como a visualização de um BPM ocorre, foram necessário ajustes para que a implementação de tais recursos fosse feita de maneira correta e consistente, sem que a alteração na visualização deixasse o LIMS com vulnerabilidades de segurança e que as informações estivessem sempre disponíveis quando necessário.
+Como estes recursos alteram a visualização de um BPM, foram necessário ajustes para que a implementação de tais recursos fosse feita de maneira correta e consistente, sem que a alteração na visualização deixasse o LIMS com vulnerabilidades de segurança e que as informações estivessem sempre disponíveis quando necessário.
 
 \subsubsection{Como funciona}
 
 Quando o usuário seleciona a atividade desejada para ser a atividade inicial, a árvore de atividades é reajustada para que a atividade selecionada seja o foco principal da instância.
 
-Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente.
+Para que isso ocorra, é necessário que a atividade selecionada se torne a atividade inicial, continuando com suas atividades filhas originais mas ganhando uma nova atividade filha: Sua atividade pai. As atividades que eram pais da atividade selecionada se tornam filhas da mesma para que essas informações estejam disponíveis para acesso e para manter a conformidade com a modelagem do BPM já existente (Figura ).
 
 Para isso, pode-se dizer que ocorre um ``giro'' na árvore de atividades para a direita, tendo todas as atividades anteriores como atividades filhas da selecionada, mantendo a sub árvore de atividades originais intacta. Podemos ver esta característica na figura~\ref{fig:primeira_implementacao}.
 
-No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitado a execução de novas atividades a partir das atividades pai.
+No Flux, esta funcionalidade faz com que atividades pai tenham uma cor diferente na interface do usuário (em azul na figura~\ref{fig:centrare_tree_normal_altered}) para que seja claro que as atividades vistas pelo usuário são atividades pai da atividade selecionada. Também é desabilitada a execução de novas atividades a partir das atividades pai.
 
 \subsubsection{Exemplos} \label{sec:dinamic_workflows_examples}
 
 Como exemplo, utilizaremos o CENTRARE que foi citado no na seção~\ref{sec:deep_activities}. Podemos ver a diferença da figura de visualização padrão do fluxo de trabalho (\ref{fig:normalInstance}) e visualização alterada (\ref{fig:changedInstance}). Na primeira imagem, temos uma tabela para seleção de instâncias sem alteração da visualização do workflow. Nela, cada linha na tabela disponibiliza um paciente diferente para seleção.
 
-Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz'', disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. São disponibilizados, em cada linha, alguns atributos para visualização para identificar a atividade desejada para obtenção de informações (como visto na figura~\ref{fig:cttx_eqp_calibracao_focada}, cada linha disponibilizando a data de execução da atividade, data de calibração, nome do equipamento e POP).
+Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz'', disponibilizando todas as cirurgias de Nariz realizadas em todos os pacientes. São disponibilizados, em cada linha, alguns atributos para visualização para identificar a atividade desejada para obtenção de informações (como visto na figura~\ref{fig:cttx_eqp_calibracao_focada}, cada linha disponibilizando a data de execução da atividade, data de calibração, nome do equipamento e procedimento operacional padrão (POP)).
 
 \begin{figure}
     \centering
