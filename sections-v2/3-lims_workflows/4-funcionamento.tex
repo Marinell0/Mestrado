@@ -6,14 +6,7 @@ Esta seção irá esclarecer como o Flux denomina cada parte do BPM e como é fe
 
 Os atributos de uma atividade definem as informações que poderão ser acrescentadas a uma atividade, isto é, os atributos definem quais dados poderão ser adicionados a cada atividade, definindo também seu tipo (número, texto...), obrigatoriedade, correlação com outros atributos, e um conjunto de atributos em um passo específico de um workflow forma uma atividade.
 
-Uma atividade em um workflow define um passo no BPM modelado. Em um workflow, podem existir qualquer número de atividades, sendo uma atividade inicial para iniciar o BPM, seguido de atividades dependentes das atividades anteriores em um formato de árvore na definição computacional. Estas atividades são modeladas utilizando o BPMN (Business Process Model and Notation), desenhando o workflow em um diagrama de fluxos, como podemos ver na figura~\ref{fig:bpmn_diagram}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{imgs/BPM/bpmn_diagram.png}
-    \caption{Exemplo de um diagrama de fluxo projetado utilizando BPMN. O Fluxo representa o pagamento de um cliente e preparação de item para entrega. Imagem da IBM~\cite{TheIBM}}
-    \label{fig:bpmn_diagram}
-\end{figure}
+Uma atividade em um workflow define um passo no BPM modelado. Em um workflow, podem existir qualquer número de atividades, sendo uma atividade inicial para iniciar o BPM, seguido de atividades dependentes das atividades anteriores em um formato de árvore na definição computacional. Estas atividades são modeladas utilizando o BPMN (Business Process Model and Notation), desenhando o workflow em um diagrama de fluxos.
 
 Um conjunto de atividades formam um workflow modelado dentro do software. Esse conjunto de atividades deve ser executado uma ou mais vezes, definindo ações que podem ser executadas para executar um processo. Neste caso, necessitamos que estas atividades estejam separadas para cara execução, para que o dados possam ser registrados para apenas aquela execução.
 
