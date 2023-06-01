@@ -48,7 +48,7 @@ Na segunda imagem, foi selecionado a atividade ``Cirurgia de Nariz'', disponibil
     \label{fig:cttx_eqp_calibracao_focada}
 \end{figure}
 
-Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, é disponibilizado a coluna \textit{Identificação Original}, que apresenta a informação do identificador da instância na tabela de atributos da instância, e pode ser feito uma pesquisa pelo identificador que o usuário está procurando no momento, como demonstrado na figura~\ref{fig:changedInstance}.
+Existem mais atividades do tipo ``Cirurgia de Nariz'' porque, seguindo a modelagem do workflow CENTRARE, existe o cadastro de um paciente que, por sua vez, pode ter feito uma ou mais cirurgias de nariz. Para identificar qual atividade pertence a qual paciente, disponibiliza-se a coluna \textit{Identificação Original}, que apresenta a informação do identificador da instância na tabela de atributos da instância, possibilitando uma pesquisa pelo identificador que o usuário está procurando no momento, como demonstrado na figura~\ref{fig:changedInstance}.
 
 %pode ser adicionado um atributo na atividade que recebe como valor o nome do paciente (ou um identificador único), deixando mais rápido para o usuário identificar a qual instância do workflow original aquela atividade pertence. Esse tipo de identificação foi utilizado no workflow CTTX - EQP que será explicado nas próximas seções.
 
@@ -72,7 +72,7 @@ Esta funcionalidade acelera o acesso à atividades profundas (como a ``Cirurgia 
 
 Com essa facilidade, o médico pode acessar a atividade com apenas um clique, tendo todas os atributos necessários para descobrir que atividade ele quer acessar e fazer alterações. Isso diminui o número de telas que o usuário irá acessar, já fornecendo diretamente a informação que ele está procurando.
 
-Este recurso também ajuda o gerente que quer saber quantas cirurgias foram feitas, selecionar a atividade disponibiliza todas as executadas para o usuário, acelerando a coleta de informações. Além disso, caso ele queira selecionar apenas cirurgias de um certo tipo, pode apenas filtrar pelo atributo de Tipo de cirurgia disponível na tabela de seleção de instâncias, facilitando a seleção da atividade buscada.
+Este recurso também ajuda o gerente que quer saber quantas cirurgias foram feitas. Selecionar a atividade disponibiliza todas as executadas para o usuário, acelerando a coleta de informações. Além disso, caso ele queira selecionar apenas cirurgias de um certo tipo, pode apenas filtrar pelo atributo de Tipo de cirurgia disponível na tabela de seleção de instâncias, facilitando a seleção da atividade buscada.
 
 \subsection{Múltiplas atividades iniciais implementadas no Flux}
 
