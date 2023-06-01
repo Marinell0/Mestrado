@@ -83,17 +83,17 @@ O Flux também foi utilizado para implementação do segundo recurso para melhor
 Para compartilhar atividades entre múltiplos workflows, é necessário que estes workflows estejam juntos em uma mesma modelagem com múltiplas atividades iniciais.
 
 Para isso, foi alterado o editor de workflows já existente no Flux para que fosse possível criar múltiplas atividades iniciais, uma atividade inicial para cada workflow agregado.
-Os workflows não precisam ter atividades compartilhadas para estarem juntos, eles funcionarão como workflows normais, com criação de instâncias e atividades da mesma maneira, apenas estando sob o mesmo nome de workflow e dentro da mesma interface que disponibiliza as informações de um workflow, disponibilizando recursos como busca de informações e geração de relatório dentro do mesmo workflow.
+Os workflows não precisam ter atividades compartilhadas para estarem juntos, eles funcionarão como workflows normais, com criação de instâncias e atividades da mesma maneira, apenas estando sob o mesmo nome de workflow e dentro da mesma interface que disponibiliza as informações de um workflow, oferecendo recursos como busca de informações e geração de relatório dentro do mesmo workflow.
 
 Quando uma atividade deve ser compartilhada entre workflows, é necessário cria-la como filha de uma das atividades que a utilizarão. Logo após a criação da atividade, é necessário criar transições entre todas as atividades pai para que tenham a atividade compartilhada disponível para execução (figura~\ref{fig:transition_ref}).
 
 Existem dois tipos de compartilhamento: Um compartilhamento geral, onde a atividade será compartilhada entre todas as instâncias existentes assim que ela for criada e um compartilhamento seletivo, onde o usuário escolhe qual instância receberá as informações da atividade executada.
 
-Uma atividade deve ser compartilhada com todas as instâncias quando o usuário deve executar atividades a partir de uma atividade executada de outra instância. O usuário que executou a atividade não escolhe para qual instância ela será compartilhada. No caso do do workflow de Citotoxicidade (CTTX), quando o workflow BPL - Equipamentos é utilizado pra compartilhar a atividade de calibração de equipamento, um equipamento pode existir e calibrações podem ser feitas antes de um ensaio de citotoxicidade existir. Quando um ensaio de citotoxicidade for ser executado, o usuário poderá escolher entre todas as calibrações executadas.
+Uma atividade deve ser compartilhada com todas as instâncias quando o usuário deve executar atividades a partir de uma atividade executada de outra instância. O usuário que executou a atividade não escolhe para qual instância ela será compartilhada. No caso do do workflow de Citotoxicidade (CTTX), quando o workflow BPL - Equipamentos é utilizado para compartilhar a atividade de calibração de equipamento, um equipamento pode existir e calibrações podem ser feitas antes de um ensaio de citotoxicidade existir. Quando um ensaio de citotoxicidade for executado, o usuário poderá escolher entre todas as calibrações executadas.
 
-Para o compartilhamento seletivo, ele é necessário porque em um pedido de exame, o envio do exame deve ser feito para um laboratório específico e não pode aparecer para outros laboratórios, sendo necessário a seleção de qual laboratório receberá o compartilhamento da atividade.
+O compartilhamento seletivo é necessário porque em um pedido de exame, o envio do mesmo deve ser feito para um laboratório específico e não pode aparecer para outros, sendo necessário a seleção de qual laboratório receberá o compartilhamento da atividade.
 
-Nos dois casos, o compartilhamento de atividades tem uma ligação forte com o sistema de permissões. A disponibilização de atividades filhas da atividade compartilhada deve ser controlado pelos administradores do workflow, alterando as permissões de visualização das atividades. Caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
+Nos dois casos, o compartilhamento de atividades tem uma ligação forte com o sistema de permissões. A disponibilização de atividades filhas da atividade compartilhada deve ser controlada pelos administradores do workflow, alterando as permissões de visualização das atividades. Caso contrário, todas as atividades e as informações contidas nelas serão compartilhadas.
 
 Com isso, é possível montar o workflow de forma a disponibilizar a requisição de dados entre usuários. Cada usuário fica responsável pela execução de uma atividade específica do workflow, executando atividades que estes usuários tenham permissão para executar. Quando um usuário não tem permissão para executar uma atividade e outro usuário tem, atividades filhas só ficam disponíveis após o usuário com permissão executar a atividade, permitindo a troca de informações entre os usuários. A colaboração é essencial para a execução do workflow.
 
@@ -126,7 +126,7 @@ Assim, a árvore de atividades, caso o médico tenha permissão de visualizar ap
 
 Um outro exemplo utiliza os workflows CTTX (Citotoxicidade) e BPL (Boas Práticas de Laboratório) - Equipamentos. Estes dois workflows necessitam de troca de informações entre eles: BPL - Equipamentos precisa informar sobre a calibração de equipamentos para utilização no workflow CTTX.
 
-Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)'' somente após uma atividade calibração do equipamento (Como podemos ver na figura~\ref{fig:cttx_eqp_structure}).
+Para isso, foi aplicado a implementação de compartilhamento de atividades entre a atividade de calibração do equipamento, disponibilizando a atividade ``Leitura de Absorbância: Perfil Inicial de Citotoxicidade (Range Finder)'' somente após uma atividade calibração do equipamento (Figura~\ref{fig:cttx_eqp_structure}).
 
 Utilizando o sistema de permissões do Flux, é possível limitar o acesso de cada tipo de usuário (cientista, técnico de laboratório, gerente de laboratório) para que o usuário tenha acesso apenas a informações relevantes ao seu trabalho. Um usuário responsável pela leitura de absorbância terá permissão para visualizar a calibração dos equipamentos utilizados, mas ele não pode realizar nenhuma calibração.
 
@@ -139,7 +139,7 @@ O técnico de laboratório não poderá executar nenhuma leitura de absorbância
     \label{fig:cttx_eqp_structure}
 \end{figure}
 
-O equipamento calibrado está identificado por um atributo dentro da atividade de calibração. Este atributo tem uma propriedade que faz o valor ser utilizado no nome da atividade. Caso o equipamento cadastrado tenha o nome de ``Balança Analítica'', a atividade de calibração terá o nome ``Calibração (Balança Analítica)'', com a data da calibração logo ao lado para maior facilidade de busca dos dados (como visto na imagem~\ref{fig:cttx_eqp_calibration}).
+O equipamento calibrado está identificado por um atributo dentro da atividade de calibração. Este atributo tem uma propriedade que faz o valor ser utilizado no nome da atividade. Caso o equipamento cadastrado tenha o nome de ``Balança Analítica'', a atividade de calibração terá o nome ``Calibração (Balança Analítica)'', com a data da calibração logo ao lado para maior facilidade de busca dos dados (Figura~\ref{fig:cttx_eqp_calibration}).
 
 \begin{figure}
     \centering
