@@ -25,7 +25,9 @@ Com isso, podemos unificar diferentes tipos de workflow utilizados em uma organi
 
 A funcionalidade de workflows dinâmicos também funciona com a troca de informações, disponibilizando todas as informações de todas as instâncias compartilhadas quando a ordem das atividades é alterada, alterando o BPM para que o foco da execução atual seja na atividade selecionada.
 
-Seguindo a utilização do Flux e a melhoria que obtivemos com workflows dinâmicos alterando a interface do usuário para que ela seja mais intuitiva e eficiente, temos que os resultados foram muito positivos e que plataformas que implementam LIMS com BPM podem se beneficiar muito com este tipo de implementação.
+Seguindo a utilização do Flux e a melhoria que obtivemos com workflows dinâmicos alterando a interface do usuário para que ela seja mais intuitiva e eficiente, temos que os resultados obtidos através de avaliação empírica foram muito positivos e que plataformas que implementam LIMS com BPM podem se beneficiar muito com este tipo de implementação. Para validar que haverá uma melhoria de eficiência quando implementado em um ambiente laboratorial real, é necessário fazer análises na velocidade de execução dos usuários.
+
+Hoje o Flux já salva variáveis de horário de execução e acesso dos usuários às atividades, que poderiam ser utilizados para realizar um estudo estatística na velocidade dos trabalhos na utilização do sistema antes do recuso ser implementando e depois, fazendo a comparação de velocidade na execução dos trabalhos dos usuários que o utilizam.
 
 Ainda existem problemas a serem atacados a partir deste trabalho, como a alteração da interface para melhor a identificação de pais diretos da atividade trocada e informações sobre compartilhamento de atividades, como quando atividades podem ser compartilhadas entre instâncias de mesmo tipo (hoje isso não é permitido: Pedidos de exame não são compartilhados entre laboratórios).
 
