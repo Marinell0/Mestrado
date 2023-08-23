@@ -19,6 +19,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[figuresleft]{rotating}
+\usepackage{pdfpages}
  
 \setmainfont{Times New Roman}
 
@@ -35,7 +36,18 @@
 \newcommand{\R}{\textbf{(REFERÊNCIA)}}
 \newcommand{\NO}{\textbf{(REESCREVER)}}
 
+\makeatletter
+\def\ps@plain{%
+      \let\@oddhead\@empty
+      \let\@evenhead\@empty
+      \def\@oddfoot{\normalfont\hfil\thepage}%
+      \def\@evenfoot{\normalfont\hfil\thepage}}
+\makeatother
+
+% Set page style for the first 5 pages
+
 \begin{document}
+    \pagenumbering{gobble}
     \begin{titlepage}
         %\fontsize{14}{12}\selectfont
 
@@ -90,6 +102,20 @@ em Bioinformática}}
         \center {\fontsize{12}{12}\selectfont Belo Horizonte}
         \center {\fontsize{12}{12}\selectfont 2023}
     \end{titlepage}
+    \includepdf[pages=-,scale=.9]{declaracoes/SEI_UFMG - 2340228 - Ata.pdf}
+    \newpage
+    \begin{titlepage}
+        {\center \textsc{\fontsize{16}{16}\selectfont \textbf{Agradecimentos}} \\}
+
+        Ao Dr. Sérgio Vale Aguiar Campos, agradeço pela oportunidade e confiança de fazer parte do laboratório LUAR e pela orientação fundamental durante meu mestrado em bioinformática.
+
+        A CAPES agradeço pela concessão da bolsa que permitiu minha dedicação em tempo integral aos estudos e à pesquisa.
+
+        Aos integrantes do LUAR, em especial a Dr Alessandra Campos, Fábio Buritis, Daniel Conrado, João Vinicius, Adriana Otoni e Paulo Henrique Otoni, meu sincero obrigado por todas as ajudas que recebi quando necessário.
+
+        Por fim, quero agradecer de coração à Amanda Helena Laurindo Silva. Nos momentos difíceis, foi o apoio dela que me deu forças para chegar até aqui e concluir meu percurso acadêmico.
+        
+    \end{titlepage}
     
     \input{sections-v2/resumo}
     \newpage
@@ -97,6 +123,11 @@ em Bioinformática}}
     
     
     \tableofcontents
+    \thispagestyle{empty}
+
+    % Pages after the change
+    \pagenumbering{arabic} % Start arabic page numbering
+    \setcounter{page}{9} % Start counting from page 9
     
     % \input{sections/introducao}
     % \input{sections/metodos}
