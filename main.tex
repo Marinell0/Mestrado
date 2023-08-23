@@ -46,6 +46,19 @@
     \renewcommand{\headrulewidth}{0pt}
 }
 
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{\abstractname}%
+    \else %% <- here I've removed \small
+      \begin{center}%
+        {\bfseries \Large\abstractname\vspace{\z@}}%  %% <- here I've added \Large
+      \end{center}%
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+
 % Set page style for the first 5 pages
 
 \begin{document}
@@ -109,7 +122,10 @@ em Bioinformática}}
     \newpage
     \begin{titlepage}
         {\center \textsc{\fontsize{16}{16}\selectfont \textbf{Agradecimentos}} \\}
+        \fontsize{12}{12}\selectfont
 
+        \hspace{1cm}
+        
         Ao Dr. Sérgio Vale Aguiar Campos, agradeço pela oportunidade e confiança de fazer parte do laboratório LUAR e pela orientação fundamental durante meu mestrado em bioinformática.
 
         A CAPES agradeço pela concessão da bolsa que permitiu minha dedicação em tempo integral aos estudos e à pesquisa.
@@ -128,9 +144,11 @@ em Bioinformática}}
     \tableofcontents
     \thispagestyle{empty}
 
+    \newpage
+
     % Pages after the change
     \pagenumbering{arabic} % Start arabic page numbering
-    \setcounter{page}{9} % Start counting from page 9
+    \setcounter{page}{10} % Start counting from page 10
     
     % \input{sections/introducao}
     % \input{sections/metodos}
@@ -148,8 +166,8 @@ em Bioinformática}}
     \bibliographystyle{unsrt}
     % \addbibresource{bibliografia.bib}
     % \bibliography{bibliografia}
-    \cleardoublepage
-    \thispagestyle{empty} % Remove page numbers from the bibliography page
+    \newpage
+    \pagenumbering{gobble}
     \bibliography{mendeley}
     
     
